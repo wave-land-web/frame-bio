@@ -7,6 +7,15 @@ dist/
 # dependencies
 node_modules/
 
+# netlify
+.netlify/
+
+# vscode
+.vscode/
+
+# Copilot 
+.github/
+
 # logs
 npm-debug.log*
 yarn-debug.log*
@@ -20,5 +29,5 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
-.idea/
+# misc
+NOTES.md

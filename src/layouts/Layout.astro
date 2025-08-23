@@ -1,22 +1,75 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+---
+import { Font } from 'astro:assets'
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from '../consts'
+import '../styles/global.css'
+import Footer from '../components/ui/Footer.astro'
+
+export interface Props {
+  title?: string
+  description?: string
+  socialImage?: string
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, socialImage } = Astro.props
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+// TODO: Replace with correct social image
+const socialImageURL = new URL(socialImage || '/jtbi-logo-primary-90-opacity.png', canonicalURL)
+---
+
+<html lang="en" data-theme="corporate">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Facebook -->
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="840" />
+    <meta property="og:image:type" content="image/png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content={SITE_URL} />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+
+    <!-- Museo Fonts via Typekit -->
+    <link rel="stylesheet" href="https://use.typekit.net/utn2lct.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="JTBI" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+
+  <body class="relative min-h-screen overflow-x-hidden">
+    <slot />
+
+    <Footer />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<script>
+  import lsa from '../lib/lsa.ts'
+
+  // Initialize LSA animations on page load
+  lsa()
+</script>

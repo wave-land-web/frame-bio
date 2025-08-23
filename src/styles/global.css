@@ -1,0 +1,232 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: corporate;
+}
+
+@plugin "daisyui/theme" {
+  name: 'corporate';
+  default: false;
+  prefersdark: false;
+  color-scheme: 'light';
+  --color-base-100: #f8f4f6;
+  --color-base-200: #d5cbce;
+  --color-base-300: #706577;
+  --color-base-content: #1f193e;
+  --color-primary: var(--color-base-content);
+  --color-primary-content: var(--color-base-100);
+  --color-secondary: #e25034;
+  --color-secondary-content: var(--color-base-100);
+  --color-accent: #badfdf;
+  --color-accent-content: var(--color-base-content);
+  --color-neutral: var(--color-base-200);
+  --color-neutral-content: var(--color-base-100);
+  --color-info: #b0636d;
+  --color-info-content: var(--color-base-100);
+  --color-success: var(--color-accent);
+  --color-success-content: var(--color-accent-content);
+  --color-warning: var(--color-info);
+  --color-warning-content: var(--color-info-content);
+  --color-error: var(--color-secondary);
+  --color-error-content: var(--color-secondary-content);
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.35rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 1;
+}
+
+@theme {
+  --site-padding-sm: clamp(0.5rem, 1vw, 1rem);
+  --site-padding-base: clamp(1rem, 2vw, 2rem);
+  --site-padding-md: clamp(2rem, 3vw, 3rem);
+  --site-padding-lg: clamp(3rem, 4vw, 4rem);
+  --site-padding-xl: clamp(4rem, 5vw, 5rem);
+  --site-padding-2xl: clamp(5rem, 6vw, 6rem);
+  --site-padding-3xl: clamp(6rem, 7vw, 7rem);
+  --site-padding-4xl: clamp(7rem, 8vw, 8rem);
+  --site-padding-5xl: clamp(8rem, 9vw, 9rem);
+  --site-padding-6xl: clamp(9rem, 10vw, 10rem);
+
+  --font-museo-sans-rounded: 'museo-sans-rounded', sans-serif;
+
+  /* Form and content spacing */
+  --form-gap: clamp(1rem, 2vw, 1.5rem);
+  --content-max-width: 85ch;
+}
+
+/* Animations */
+
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /**
+    * Required class: `lsa` (initializes animations and defaults to fade-in)
+    * Note: Add `no-repeat` class to prevent animations from repeating on scroll
+    */
+  .lsa {
+    @apply opacity-0 transform transition duration-700;
+
+    /* Slide animations */
+    &.lsa-slide-up {
+      @apply translate-y-4;
+    }
+    &.lsa-slide-down {
+      @apply -translate-y-4;
+    }
+    &.lsa-slide-left {
+      @apply -translate-x-4;
+    }
+    &.lsa-slide-right {
+      @apply translate-x-4;
+    }
+    &.lsa-slide-down-right {
+      @apply -translate-x-4 -translate-y-4;
+    }
+    &.lsa-slide-down-left {
+      @apply translate-x-4 -translate-y-4;
+    }
+    &.lsa-slide-up-right {
+      @apply -translate-x-4 translate-y-4;
+    }
+    &.lsa-slide-up-left {
+      @apply translate-x-4 translate-y-4;
+    }
+
+    /* Handle active state */
+    &.active {
+      @apply opacity-100 translate-x-0 translate-y-0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-content;
+  }
+
+  html {
+    @apply scroll-smooth break-words scroll-pt-[calc(var(--site-padding-3xl)+var(--nav-height))];
+  }
+
+  body {
+    @apply min-h-screen bg-primary font-museo-sans-rounded text-primary-content antialiased;
+  }
+
+  main,
+  footer {
+    @apply py-(--site-padding-lg);
+  }
+
+  main {
+    @apply pb-0;
+  }
+
+  .wrapper {
+    @apply w-full max-w-screen-2xl mx-auto px-(--site-padding-base);
+  }
+
+  section {
+    @apply py-(--site-padding-2xl);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    @apply text-balance leading-tight;
+  }
+
+  h1,
+  .h1 {
+    @apply font-bold text-5xl sm:text-6xl;
+  }
+
+  h2,
+  .h2 {
+    @apply font-extralight text-4xl sm:text-5xl;
+  }
+
+  h3,
+  .h3 {
+    @apply font-bold text-3xl sm:text-4xl;
+  }
+
+  h4,
+  .h4 {
+    @apply font-medium text-2xl sm:text-3xl;
+  }
+
+  h5,
+  .h5 {
+    @apply font-light text-xl sm:text-2xl;
+  }
+
+  p,
+  li:not(nav li),
+  .p {
+    @apply max-w-(--content-max-width) font-light text-base sm:text-lg text-pretty leading-relaxed;
+  }
+
+  button,
+  a,
+  .a {
+    @apply text-balance transition-colors duration-200;
+  }
+
+  img,
+  svg {
+    @apply w-full h-auto;
+  }
+
+  img {
+    @apply w-full h-auto object-cover;
+  }
+
+  em {
+    @apply italic;
+  }
+
+  /* Form styling improvements */
+  .form-control .input {
+    @apply transition-colors duration-200;
+  }
+
+  .form-control .input:focus {
+    @apply border-primary;
+  }
+
+  .checkbox:checked {
+    @apply bg-primary border-primary;
+  }
+
+  /* Ensure proper contrast for form elements */
+  .input-bordered {
+    @apply border-base-content/20;
+  }
+
+  .input-bordered:focus {
+    @apply border-primary border-2;
+  }
+
+  /* Strong text styling - uncomment when you have the font */
+  strong {
+    @apply font-semibold;
+  }
+}
