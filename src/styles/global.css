@@ -52,8 +52,7 @@
 
   --font-museo-sans-rounded: 'museo-sans-rounded', sans-serif;
 
-  /* Form and content spacing */
-  --form-gap: clamp(1rem, 2vw, 1.5rem);
+  /* Content */
   --content-max-width: 85ch;
 }
 
@@ -110,24 +109,24 @@
   }
 
   ::selection {
-    @apply bg-primary text-primary-content;
+    @apply bg-primary-content text-primary;
   }
 
   html {
-    @apply scroll-smooth break-words scroll-pt-[calc(var(--site-padding-3xl)+var(--nav-height))];
+    @apply scroll-smooth break-words;
   }
 
   body {
     @apply min-h-screen bg-primary font-museo-sans-rounded text-primary-content antialiased;
   }
 
+  main {
+    @apply min-h-screen;
+  }
+
   main,
   footer {
     @apply py-(--site-padding-lg);
-  }
-
-  main {
-    @apply pb-0;
   }
 
   .wrapper {
@@ -148,14 +147,13 @@
   .h2,
   .h3,
   .h4,
-  .h5,
-  .h6 {
-    @apply text-balance leading-tight;
+  .h5 {
+    @apply text-balance;
   }
 
   h1,
   .h1 {
-    @apply font-bold text-5xl sm:text-6xl;
+    @apply font-extrabold text-5xl sm:text-6xl;
   }
 
   h2,
@@ -203,6 +201,16 @@
     @apply italic;
   }
 
+  strong {
+    @apply font-semibold;
+  }
+
+  /* TODO: do we need this? */
+  .title-thick {
+    @apply font-extrabold uppercase text-[200px] text-base-300;
+    letter-spacing: -0.05em;
+  }
+
   /* Form styling improvements */
   .form-control .input {
     @apply transition-colors duration-200;
@@ -223,10 +231,5 @@
 
   .input-bordered:focus {
     @apply border-primary border-2;
-  }
-
-  /* Strong text styling - uncomment when you have the font */
-  strong {
-    @apply font-semibold;
   }
 }

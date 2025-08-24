@@ -1,5 +1,113 @@
-<footer class="py-(--site-padding-lg)">
-  <p>
-    Copyright {new Date().getFullYear()}, Frame Bio LLC | All rights reserved.
-  </p>
+---
+import FrameBioLogo from '../../assets/images/frame-bio_logo-dark-background-horizontal.svg'
+---
+
+<footer class="relative bg-primary-content text-primary z-100">
+  <div class="wrapper">
+    <!-- Logo -->
+    <a href="/" class="block mb-(--site-padding-lg)">
+      <FrameBioLogo class="max-w-lg" />
+    </a>
+
+    <!-- Contact Information -->
+    <div class="flex flex-col items-center gap-6 mb-(--site-padding-lg)">
+      <!-- Address -->
+      <div class="flex items-start gap-3 w-full">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-8"
+        >
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <div class="text-center">
+          <div class="font-medium">555 NW Street St #113</div>
+          <div class="font-medium">Portland, OR 97209</div>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="flex items-center gap-3 w-full">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-8"
+        >
+          <path
+            d="M22 16.92V19a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13 1.13.37 2.25.72 3.32a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c1.07.35 2.19.59 3.32.72a2 2 0 0 1 1.72 2z"
+          ></path>
+        </svg>
+        <a href="tel:+15555550044" class="font-medium hover:text-secondary transition-colors">
+          (555) 555-0044
+        </a>
+      </div>
+
+      <!-- Email -->
+      <div class="flex items-center gap-3 w-full">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-8"
+        >
+          <rect x="4" y="5" width="16" height="14" rx="3" ry="3"></rect>
+          <polyline points="4 7 12 13 20 7"></polyline>
+        </svg>
+        <a
+          href="mailto:info@framebio.com"
+          class="font-medium hover:text-secondary transition-colors"
+        >
+          info@framebio.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Back to Top & Copyright -->
+    <div class="flex flex-col items-end gap-2 text-right">
+      <!-- Back to Top -->
+      <a
+        href="#top"
+        class="flex items-center gap-2 text-sm font-medium hover:text-secondary transition-colors"
+      >
+        <span class="uppercase tracking-wider w-24">Back to the top</span>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="size-6"
+        >
+          <line x1="6" y1="6" x2="18" y2="6"></line>
+          <polyline points="6 14 12 8 18 14"></polyline>
+        </svg>
+      </a>
+
+      <!-- Copyright -->
+      <div class="text-sm opacity-60">
+        Copyright {new Date().getFullYear()}, Frame Bio LLC | All rights reserved.
+      </div>
+    </div>
+  </div>
 </footer>
