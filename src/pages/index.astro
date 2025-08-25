@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets'
 import FrameBioFigure from '../assets/images/frame-bio_figure-leaning-stretch.svg'
 import SkinBoneAxisLockup from '../assets/images/frame-bio_skin-bone-axis-lockup.svg'
 import TitleVertical from '../assets/images/frame-bio_title-vertical.svg'
+import highResImage from '../assets/images/high-res-exosome-image.png'
 import Navigation from '../components/ui/Navigation.astro'
 import Layout from '../layouts/Layout.astro'
 ---
@@ -12,8 +14,11 @@ import Layout from '../layouts/Layout.astro'
     <Navigation />
   </header>
   <main>
-    <section id="targeted-therapies" class="wrapper">
-      <div id="targeted-therapies-grid" class="grid md:grid-cols-2 gap-(--site-padding-base)">
+    <section id="about" class="wrapper">
+      <div
+        id="targeted-therapies-grid"
+        class="grid md:grid-cols-2 gap-x-(--site-padding-base) gap-y-(--site-padding-lg)"
+      >
         <FrameBioFigure class="h-auto max-w-lg mr-auto" />
         <div
           class="flex flex-col gap-(--site-padding-base) w-[calc(100%-var(--site-padding-base)*2)] mt-(--site-padding-lg)"
@@ -34,7 +39,7 @@ import Layout from '../layouts/Layout.astro'
         </div>
 
         <!-- Treatment Tags - Second Row, Spanning Both Columns -->
-        <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4 mt-(--site-padding-lg)">
+        <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="flex items-center gap-2">
             <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
             <p class="h5 font-museo-slab-rounded">Bone</p>
@@ -50,6 +55,76 @@ import Layout from '../layouts/Layout.astro'
           <div class="flex items-center gap-2">
             <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
             <p class="h5 font-museo-slab-rounded">Cartilage</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="our-tech">
+      <div class="wrapper">
+        <div
+          class="grid lg:grid-cols-[1fr_500px] gap-(--site-padding-xl) justify-items-center items-center"
+        >
+          <!-- Left Column: Text Content -->
+          <div class="space-y-(--site-padding-lg)">
+            <h2 class="text-secondary font-museo-slab-rounded">CORE TECHNOLOGY</h2>
+
+            <div class="space-y-(--site-padding-base)">
+              <p class="text-base-100">
+                Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae
+                praecatur, que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in
+                et, esenet as aut di officiidis cum verrorem vid endaepe rionsed quam, seritatur,
+                sit qui del intios exeri consequi dolupta vent ius expla perrupt aerferro it illae
+                ne plaboreribus eostium et hicia commis sin est, consed que optae
+              </p>
+
+              <p class="text-base-100">
+                Rore in et, esenet as aut di officiidis cum verrorem vid endaepe rionsed quam,
+                seritatur, sit qui del intios exeri consequi dolupta vent ius expla perrupt aerferro
+                it illae ne plaboreribus eostium et hicia commis sin est, consed que optae
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Exosome Image with Static Annotations -->
+          <div class="relative w-full h-auto max-w-[500px] max-h-[500px] mx-auto text-accent">
+            <Image
+              src={highResImage}
+              alt="High resolution exosome structure"
+              class="drop-shadow-2xl"
+            />
+
+            <!-- First annotation - center left area -->
+            <div class="absolute top-full left-0 w-[180px]">
+              <p class="text-xs leading-tight">
+                Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae
+                praecatur, que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in
+                et, esenet as aut di officiidis cum verrorem vid endaepe
+              </p>
+              <!-- Horizontal line with circle - rotate with CSS transform as needed -->
+              <svg
+                class="absolute -top-20 left-1/2 -rotate-60 w-[150px] h-[20px]"
+                viewBox="0 0 150 20"
+              >
+                <line x1="0" y1="10" x2="140" y2="10" stroke="var(--color-accent)" stroke-width="2"
+                ></line>
+                <circle cx="140" cy="10" r="3" fill="var(--color-accent)"></circle>
+              </svg>
+            </div>
+
+            <!-- Second annotation - bottom right area -->
+            <div class="absolute -bottom-8 right-0 w-50 text-right">
+              <p class="text-xs leading-tight">
+                Equis et minis nobit derum aperspid quatio. Rore in et, esenet as aut di officiidis
+                cum verrorem vid endaepe
+              </p>
+              <!-- Horizontal line with circle - rotate with CSS transform as needed -->
+              <svg class="absolute -top-20 w-[150px] h-[20px] rotate-225" viewBox="0 0 150 20">
+                <line x1="0" y1="10" x2="140" y2="10" stroke="var(--color-accent)" stroke-width="2"
+                ></line>
+                <circle cx="140" cy="10" r="3" fill="var(--color-accent)"></circle>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
