@@ -78,7 +78,7 @@ export default function Notification({
             </Section>
 
             <Text style={footer}>
-              This notification was sent from your JTBI website contact form.
+              This notification was sent from your Frame Bio website contact form.
             </Text>
           </Section>
         </Container>

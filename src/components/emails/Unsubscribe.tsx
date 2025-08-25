@@ -5,7 +5,6 @@ import {
   Head,
   Hr,
   Html,
-  Img,
   Preview,
   Section,
   Text,
@@ -28,14 +27,6 @@ export default function Unsubscribe({ firstName }: UnsubscribeProps) {
       </Preview>
       <Body style={main}>
         <Container style={container}>
-          <Img
-            src={`${SITE_URL}/jtbi-logo-primary-90-opacity.png`}
-            width="320"
-            height="auto"
-            alt="Frame Bio Logo"
-            style={logo}
-          />
-
           <Hr style={hr} />
 
           <Section style={container}>

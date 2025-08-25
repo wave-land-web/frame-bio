@@ -16,7 +16,7 @@ export interface Props {
 const { title = SITE_TITLE, description = SITE_DESCRIPTION, socialImage } = Astro.props
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 // TODO: Replace with correct social image
-const socialImageURL = new URL(socialImage || '/jtbi-logo-primary-90-opacity.png', canonicalURL)
+const socialImageURL = new URL(socialImage || '/design/HighRes-Exosome-Image.png', canonicalURL)
 ---
 
 <html lang="en" data-theme="corporate" id="top">
@@ -59,7 +59,7 @@ const socialImageURL = new URL(socialImage || '/jtbi-logo-primary-90-opacity.png
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="JTBI" />
+    <meta name="apple-mobile-web-app-title" content="Frame Bio" />
     <link rel="manifest" href="/site.webmanifest" />
   </head>
 

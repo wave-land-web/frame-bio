@@ -5,7 +5,6 @@ import {
   Head,
   Hr,
   Html,
-  Img,
   Link,
   Preview,
   Section,
@@ -33,14 +32,6 @@ export default function Welcome({ email, firstName, isSubscribed = true }: Welco
       </Preview>
       <Body style={main}>
         <Container style={container}>
-          <Img
-            src={`${SITE_URL}/jtbi-logo-primary-90-opacity.png`}
-            width="320"
-            height="auto"
-            alt="Frame Bio Logo"
-            style={logo}
-          />
-
           <Hr style={hr} />
 
           <Section style={container}>

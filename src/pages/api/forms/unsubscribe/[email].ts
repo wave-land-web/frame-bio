@@ -59,7 +59,7 @@ export const GET: APIRoute = async ({ params, redirect }) => {
 
   // Send an email to the user confirming their unsubscription
   const { data: unsubscribeEmailData, error: unsubscribeEmailError } = await resend.emails.send({
-    from: 'JTBI <hello@jtbimaginative.com>',
+    from: 'Frame Bio <hello@wavelandweb.com>',
     to: sanitizedEmail,
     subject: 'You have been unsubscribed from Frame Bio',
     react: Unsubscribe({

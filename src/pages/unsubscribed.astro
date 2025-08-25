@@ -1,8 +1,4 @@
 ---
-import { Image } from 'astro:assets'
-import LogoPrimary from '../assets/images/logos/jtbi-logo-primary.svg'
-import CloudImage from '../assets/images/textures/jtbi-cloud1-80-opacity.png'
-import CloudImageTwo from '../assets/images/textures/jtbi-cloud2-80-opacity.png'
 import { SITE_TITLE } from '../consts'
 import Layout from '../layouts/Layout.astro'
 ---
@@ -11,29 +7,6 @@ import Layout from '../layouts/Layout.astro'
   title={`Unsubscribed - ${SITE_TITLE}`}
   description="You have been successfully unsubscribed from our email list."
 >
-  <header class="h-[80dvh] px-(--site-padding-base) relative flex justify-center items-center">
-    <div class="overflow-hidden absolute inset-0">
-      <Image
-        src={CloudImage}
-        alt="Cloud texture background"
-        class="absolute top-1/2 left-1/2 w-auto h-auto max-w-md opacity-80 pointer-events-none cloud-drift-one lsa no-repeat"
-        role="presentation"
-        loading="eager"
-      />
-      <Image
-        src={CloudImageTwo}
-        alt="Secondary cloud texture background"
-        class="absolute top-1/2 left-1/2 w-auto h-auto max-w-md opacity-80 pointer-events-none cloud-drift-two lsa no-repeat"
-        role="presentation"
-        loading="eager"
-      />
-    </div>
-    <h1 class="sr-only">{SITE_TITLE}</h1>
-
-    <div class="relative w-full max-w-xl z-10 lsa no-repeat delay-100">
-      <LogoPrimary />
-    </div>
-  </header>
   <main
     class="max-w-screen-lg mx-auto pt-0 pb-(--site-padding-3xl) px-(--site-padding-base) text-center"
   >
@@ -67,26 +40,3 @@ import Layout from '../layouts/Layout.astro'
     </section>
   </main>
 </Layout>
-
-<style>
-  /* Cloud drift animations */
-  @keyframes cloudDriftOne {
-    0% {
-      transform: translate(-50%, -50%) translateX(-25px);
-    }
-    50% {
-      transform: translate(-50%, -50%) translateX(25px);
-    }
-    100% {
-      transform: translate(-50%, -50%) translateX(-25px);
-    }
-  }
-
-  .cloud-drift-one {
-    animation: cloudDriftOne 12s ease-in-out infinite;
-  }
-
-  .cloud-drift-two {
-    animation: cloudDriftOne 15s ease-in-out infinite;
-  }
-</style>

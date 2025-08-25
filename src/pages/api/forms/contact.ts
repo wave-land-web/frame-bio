@@ -135,7 +135,7 @@ export const POST: APIRoute = async ({ request }) => {
 
         // Add welcome email to batch
         emailsToSend.push({
-          from: 'JTBI <hello@jtbimaginative.com>',
+          from: 'Frame Bio <hello@wavelandweb.com>',
           to: [userData.email],
           subject: userData.isSubscribed
             ? 'Welcome to Frame Bio'
@@ -148,7 +148,7 @@ export const POST: APIRoute = async ({ request }) => {
       }
     }
 
-    // Prepare notification email to jtbimaginative@gmail.com
+    // Prepare notification email to <your-email>@gmail.com
     try {
       const notificationParams = {
         firstName,
@@ -167,8 +167,8 @@ export const POST: APIRoute = async ({ request }) => {
 
       // Add notification email to batch
       emailsToSend.push({
-        from: 'JTBI Website <noreply@jtbimaginative.com>',
-        to: ['jtbimaginative@gmail.com'],
+        from: 'Frame Bio Website <hello@wavelandweb.com>',
+        to: ['josh@wavelandweb.com'],
         subject: `New contact form submission from ${firstName} ${lastName}`,
         react: Notification(notificationParams),
         text: notificationText,
