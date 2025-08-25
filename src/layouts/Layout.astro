@@ -5,7 +5,7 @@ import Footer from '../components/ui/Footer.astro'
 import { getImage } from 'astro:assets'
 import CollagenTexture from '../assets/images/frame-bio_collagen-texture.svg'
 
-const CollagenTextureImage = await getImage({ src: CollagenTexture.src })
+const CollagenTextureImage = await getImage({ src: CollagenTexture.src, inferSize: true })
 
 export interface Props {
   title?: string
