@@ -51,6 +51,7 @@
   --site-padding-6xl: clamp(9rem, 10vw, 10rem);
 
   --font-museo-sans-rounded: 'museo-sans-rounded', sans-serif;
+  --font-museo-slab-rounded: 'museo-slab-rounded', serif;
 
   /* Content */
   --content-max-width: 85ch;
@@ -130,7 +131,7 @@
   }
 
   .wrapper {
-    @apply w-full max-w-screen-2xl mx-auto px-(--site-padding-base);
+    @apply w-full max-w-screen-xl mx-auto py-(--site-padding-base) px-(--site-padding-xl);
   }
 
   section {
@@ -163,7 +164,7 @@
 
   h3,
   .h3 {
-    @apply font-bold text-3xl sm:text-4xl;
+    @apply font-bold font-museo-slab-rounded text-3xl sm:text-4xl;
   }
 
   h4,
@@ -185,7 +186,7 @@
   button,
   a,
   .a {
-    @apply text-balance transition-colors duration-200;
+    @apply font-light text-balance hover:text-secondary text-base sm:text-lg transition-colors duration-200 cursor-pointer;
   }
 
   img,
