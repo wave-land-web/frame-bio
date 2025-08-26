@@ -4,7 +4,10 @@ import BoneTexture from '../assets/images/frame-bio_bone-texture.svg'
 import CollagenTexture from '../assets/images/frame-bio_collagen-texture.svg'
 import FrameBioFigureTwo from '../assets/images/frame-bio_figure-2-placeholder.svg' // src/assets/images/frame-bio_figure-2-placeholder.svg
 import FrameBioFigure from '../assets/images/frame-bio_figure-leaning-stretch.svg'
+import FrameBioBmp2Bar from '../assets/images/frame-bio_infographic-bmp2-bar.svg'
+import FrameBioCollagenBar from '../assets/images/frame-bio_infographic-collagen-bar.svg'
 import PillsTexture from '../assets/images/frame-bio_pills-texture.svg'
+import FrameBioPipelineGrid from '../assets/images/frame-bio_pipeline-grid-section.svg'
 import SkinBoneAxisLockup from '../assets/images/frame-bio_skin-bone-axis-lockup.svg'
 import TitleVertical from '../assets/images/frame-bio_title-vertical.svg'
 import highResImage from '../assets/images/high-res-exosome-image.png'
@@ -209,14 +212,145 @@ import Layout from '../layouts/Layout.astro'
       </div>
     </section>
 
-    <!-- TODO: finish -->
-    <section id="pipeline">
+    <section id="pipeline" class="bg-primary text-primary-content">
       <div class="wrapper">
-        <div class="grid grid-cols-2 items-end">
-          <h2 class="text-secondary font-museo-slab-rounded uppercase">
-            Drug Development Pipeline
-          </h2>
-          <Image src={FrameBioFigureTwo} alt="Figure outline" />
+        <div class="space-y-(--site-padding-2xl)">
+          <!-- Header with Title and Figure -->
+          <div class="grid lg:grid-cols-2 items-end gap-(--site-padding-base)">
+            <h2
+              class="text-secondary text-nowrap font-museo-slab-rounded uppercase text-4xl lg:text-5xl"
+            >
+              Drug Development Pipeline
+            </h2>
+            <div class="flex justify-end">
+              <Image
+                src={FrameBioFigureTwo}
+                alt="Drug Development Pipeline"
+                class="h-auto max-w-sm opacity-60"
+              />
+            </div>
+          </div>
+
+          <!-- Pipeline Chart -->
+          <div class="space-y-(--site-padding-lg)">
+            <!-- Column Headers -->
+            <div class="grid grid-cols-4 gap-(--site-padding-base) mb-(--site-padding-base)">
+              <div></div>
+              <!-- Empty space for row labels -->
+              <div class="text-center">
+                <h4 class="text-accent uppercase text-xl">Discovery</h4>
+              </div>
+              <div class="text-center">
+                <h4 class="text-accent uppercase text-xl">Pre-Clinical</h4>
+              </div>
+              <div class="text-center">
+                <h4 class="text-accent uppercase text-xl">IND-Enabling</h4>
+              </div>
+            </div>
+
+            <!-- BMP-2 Row -->
+            <div
+              class="grid grid-cols-4 gap-(--site-padding-base) items-center mb-(--site-padding-lg)"
+            >
+              <!-- Row Labels -->
+              <div class="space-y-8">
+                <div class="space-y-2">
+                  <h4 class="text-xl font-museo-slab-rounded font-bold uppercase text-secondary">
+                    BMP-2
+                  </h4>
+                  <p class="text-lg">
+                    <span class="uppercase"
+                      >Bone Morphogenic<br />
+                      Protein</span
+                    > via mRNA
+                  </p>
+                </div>
+                <!-- Row Label -->
+                <div class="space-y-2">
+                  <h4 class="font-museo-slab-rounded font-bold uppercase text-secondary text-xl">
+                    Collagen 1
+                  </h4>
+                  <p class="text-lg">
+                    <span class="uppercase"
+                      >Collagen Protein<br />
+                      Regeneration</span
+                    > via mRNA
+                  </p>
+                </div>
+              </div>
+
+              <!-- Grid Background (3 sections) -->
+              <div class="col-span-3 relative">
+                <div class="grid grid-cols-3 gap-8">
+                  <Image
+                    src={FrameBioPipelineGrid}
+                    alt="Pipeline Grid"
+                    class="w-full h-auto opacity-30"
+                  />
+                  <Image
+                    src={FrameBioPipelineGrid}
+                    alt="Pipeline Grid"
+                    class="w-full h-auto opacity-30"
+                  />
+                  <Image
+                    src={FrameBioPipelineGrid}
+                    alt="Pipeline Grid"
+                    class="w-full h-auto opacity-30"
+                  />
+                </div>
+
+                <!-- 1st Progress Bar Overlay -->
+                <div class="absolute top-12 left-0 w-1/2 flex items-center">
+                  <Image src={FrameBioBmp2Bar} alt="BMP-2 Progress Bar" class="w-auto h-full" />
+                </div>
+
+                <!-- 2nd Progress Bar Overlay -->
+                <div class="absolute bottom-12 left-0 w-1/4 flex items-center">
+                  <Image
+                    src={FrameBioCollagenBar}
+                    alt="Collagen Progress Bar"
+                    class="w-auto h-full"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Text -->
+            <div class="flex justify-between gap-8">
+              <p class="max-w-2xl">
+                Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae
+                praecatur, que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in
+                et, esenet as aut di officiidis cum verrorem vid endaepe rionsed quam, seritatur,
+                sit qui del intios exeri consequi dolupta vent ius expla perrupt aerferro it illae
+                ne plaboreribus eostium et hicia commis sin est.
+              </p>
+
+              <!-- Bottom Right Icon/Text -->
+
+              <div class="flex flex-col gap-4 text-accent">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  width="24px"
+                  viewBox="0 -960 960 960"
+                  fill="currentColor"
+                  class="size-8"
+                  ><path
+                    d="M401 0q-83 0-156-31.5t-127.5-86Q63-172 31.5-245T0-400q0-83 31.5-156t86-127.5Q172-738 245-769.5T401-801q10 0 19.5.5T440-799v80q-10-1-19.5-1.5T401-721q-134 0-227.5 93.5T80-400q0 133 93.5 226.5T401-80q133 0 226.5-93.5T721-400h80q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T401 0Zm131-212L360-384v-216h80v184l148 148-56 56Zm342-268q-23-142-120-246.5T520-866v-82q171 37 290.5 165T955-480h-81Zm-163 0q-19-75-69.5-132T520-698v-85q103 32 177 113.5T793-480h-82Z"
+                  ></path></svg
+                >
+                <p class="text-sm text-accent leading-tight">
+                  Porta aut auda norunt niis<br />
+                  aute volore autectur<br />
+                  volupti lectature volorest<br />
+                  et ma vent prem volupt<br />
+                  dimis molorem curn. e<br />
+                  corporibus aut et temporibus<br />
+                  magnatur?
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
