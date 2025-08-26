@@ -10,10 +10,10 @@
         fill: none;
       }
       .cls-2 {
-        fill: #716678;
+        fill: var(--color-base-300);
       }
       .cls-3 {
-        fill: #f7f1f5;
+        fill: var(--color-base-100);
       }
     </style></defs
   ><g id="Layer_1-2"

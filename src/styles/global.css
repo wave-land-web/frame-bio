@@ -8,19 +8,19 @@
   default: false;
   prefersdark: false;
   color-scheme: 'light';
-  --color-base-100: #f8f4f6;
-  --color-base-200: #d5cbce;
-  --color-base-300: #706577;
+  --color-base-100: #f7f1f5;
+  --color-base-200: #c2c2c2;
+  --color-base-300: #716678;
   --color-base-content: #1f193e;
   --color-primary: var(--color-base-content);
   --color-primary-content: var(--color-base-100);
-  --color-secondary: #e25034;
+  --color-secondary: #e05136;
   --color-secondary-content: var(--color-base-100);
-  --color-accent: #badfdf;
+  --color-accent: #b8dedc;
   --color-accent-content: var(--color-base-content);
   --color-neutral: var(--color-base-200);
   --color-neutral-content: var(--color-base-100);
-  --color-info: #b0636d;
+  --color-info: #b0646d;
   --color-info-content: var(--color-base-100);
   --color-success: var(--color-accent);
   --color-success-content: var(--color-accent-content);
@@ -191,10 +191,6 @@
 
   img,
   svg {
-    @apply w-full h-auto;
-  }
-
-  img {
     @apply w-full h-auto object-cover;
   }
 
@@ -206,31 +202,12 @@
     @apply font-semibold;
   }
 
-  /* TODO: do we need this? */
-  .title-thick {
-    @apply font-extrabold uppercase text-[200px] text-base-300;
-    letter-spacing: -0.05em;
+  input,
+  textarea {
+    @apply text-base-content text-base sm:text-lg;
   }
 
-  /* Form styling improvements */
-  .form-control .input {
-    @apply transition-colors duration-200;
-  }
-
-  .form-control .input:focus {
-    @apply border-primary;
-  }
-
-  .checkbox:checked {
-    @apply bg-primary border-primary;
-  }
-
-  /* Ensure proper contrast for form elements */
-  .input-bordered {
-    @apply border-base-content/20;
-  }
-
-  .input-bordered:focus {
-    @apply border-primary border-2;
+  input::placeholder {
+    @apply text-info;
   }
 }

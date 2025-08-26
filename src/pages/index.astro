@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets'
 import BoneTexture from '../assets/images/frame-bio_bone-texture.svg'
 import CollagenTexture from '../assets/images/frame-bio_collagen-texture.svg'
+import FrameBioFigureTwo from '../assets/images/frame-bio_figure-2-placeholder.svg' // src/assets/images/frame-bio_figure-2-placeholder.svg
 import FrameBioFigure from '../assets/images/frame-bio_figure-leaning-stretch.svg'
 import PillsTexture from '../assets/images/frame-bio_pills-texture.svg'
 import SkinBoneAxisLockup from '../assets/images/frame-bio_skin-bone-axis-lockup.svg'
@@ -204,6 +205,173 @@ import Layout from '../layouts/Layout.astro'
               </div>
             </article>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO: finish -->
+    <section id="pipeline">
+      <div class="wrapper">
+        <div class="grid grid-cols-2 items-end">
+          <h2 class="text-secondary font-museo-slab-rounded uppercase">
+            Drug Development Pipeline
+          </h2>
+          <Image src={FrameBioFigureTwo} alt="Figure outline" />
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO: finish -->
+    <section id="contact">
+      <div class="wrapper p-(--site-padding-lg) shadow-[0_0_10px] shadow-secondary">
+        <div class="space-y-(--site-padding-base)">
+          <h2 class="text-secondary font-museo-slab-rounded uppercase">Contact Frame Bio</h2>
+          <p>
+            Nestium expliquia dessitiones dolutemquas aut et ut haritate cus vent eatium evenist,
+            natuscium faccum quatia. Rem quatest, eum qui ilit officimus ut faciuri deliquas enieni
+            con rehenda ndunte posaepudam, unda sunt et ut vel molor autempor sapienes derciisquiam
+            volessim asimpora vollique.
+          </p>
+
+          <form
+            id="contact-form"
+            class="space-y-(--site-padding-sm) lsa no-repeat"
+            method="POST"
+            action="/api/forms/contact"
+          >
+            <!-- First and Last Name -->
+            <fieldset class="grid grid-cols-2 gap-(--site-padding-sm)">
+              <legend class="sr-only">Personal Information</legend>
+              <label class="sr-only" for="firstName">First Name (required)</label>
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                placeholder="First Name*"
+                class="w-full input input-accent"
+                required
+                aria-required="true"
+              />
+              <label class="sr-only" for="lastName">Last Name (required)</label>
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                placeholder="Last Name*"
+                class="w-full input input-accent"
+                required
+                aria-required="true"
+              />
+            </fieldset>
+
+            <!-- Business Name -->
+            <fieldset>
+              <legend class="sr-only">Business Name</legend>
+              <label class="sr-only" for="businessName">Business Name (required)</label>
+              <input
+                type="text"
+                name="businessName"
+                id="businessName"
+                placeholder="Business Name*"
+                class="w-full input input-accent"
+                required
+                aria-required="true"
+              />
+            </fieldset>
+
+            <fieldset>
+              <legend class="sr-only">Job Title</legend>
+              <label class="sr-only" for="jobTitle">Job Title (required)</label>
+              <input
+                type="text"
+                name="jobTitle"
+                id="jobTitle"
+                placeholder="Job Title*"
+                class="w-full input input-accent"
+                required
+                aria-required="true"
+              />
+            </fieldset>
+
+            <!-- Email + Phone -->
+            <fieldset class="grid grid-cols-2 gap-(--site-padding-sm)">
+              <legend class="sr-only">Contact Information</legend>
+              <label class="sr-only" for="email">Email Address (required)</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email*"
+                class="w-full input input-accent"
+                required
+                aria-required="true"
+                aria-describedby="email-help"
+              />
+              <label class="sr-only" for="phone">Phone Number (required)</label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Phone*"
+                class="w-full input input-accent"
+                required
+                aria-required="true"
+              />
+            </fieldset>
+
+            <!-- Message textarea -->
+            <fieldset>
+              <legend class="sr-only">Message (optional)</legend>
+              <textarea
+                name="message"
+                id="message"
+                rows="10"
+                placeholder="Message (optional)"
+                class="w-full textarea textarea-accent"
+                aria-required="false"></textarea>
+            </fieldset>
+
+            <div
+              class="flex flex-col justify-between gap-(--site-padding-sm) mt-(--site-padding-lg)"
+            >
+              <p class="text-sm text-accent">
+                .Tiamenderitat dolorep eriatioris et moluptam abo. Met rerempo rehenimet aut vit as
+                aut aut officius audania nonsequo te venim alit ent ea santiae. Luptae nonsed unte
+                nis excessum id ute suntur repraes eum et eturiamus estias nis porehen dipsundissit
+                dus as rerum con pos autem il imaxim conestem.
+              </p>
+              <!-- Submit Button -->
+              <div class="flex md:justify-end mb-8">
+                <button type="submit" class="btn btn-lg btn-info">Submit Info</button>
+              </div>
+            </div>
+
+            <!-- Form Messages -->
+            <div id="form-messages" class="hidden text-base-100 text-left">
+              <div
+                id="success-message"
+                class="hidden flex-col md:flex-row items-start gap-6 p-6 bg-success border border-base-100 rounded-lg"
+              >
+                <h3 class="uppercase h4 font-bold">Success!</h3>
+                <p>
+                  We've received your information and will get back to you shortly. You've also been
+                  added to our mailing list. We limit our emails to only a few a year, and we never
+                  sell your information to others. If you ever find that these emails no longer fit
+                  your fancy, you can unsubscribe anytime.
+                </p>
+              </div>
+              <div
+                id="error-message"
+                class="hidden flex-col md:flex-row items-start gap-6 p-6 bg-error border border-base-100 rounded-lg"
+              >
+                <h3 class="uppercase h4 font-bold">Yikes!</h3>
+                <p>
+                  For some reason, the form did not submit correctly. Please make sure you've
+                  completed all the required fields and try to send the information again.
+                </p>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>
