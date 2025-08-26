@@ -1,6 +1,9 @@
 ---
 import { Image } from 'astro:assets'
+import BoneTexture from '../assets/images/frame-bio_bone-texture.svg'
+import CollagenTexture from '../assets/images/frame-bio_collagen-texture.svg'
 import FrameBioFigure from '../assets/images/frame-bio_figure-leaning-stretch.svg'
+import PillsTexture from '../assets/images/frame-bio_pills-texture.svg'
 import SkinBoneAxisLockup from '../assets/images/frame-bio_skin-bone-axis-lockup.svg'
 import TitleVertical from '../assets/images/frame-bio_title-vertical.svg'
 import highResImage from '../assets/images/high-res-exosome-image.png'
@@ -66,19 +69,17 @@ import Layout from '../layouts/Layout.astro'
           class="grid lg:grid-cols-[1fr_500px] gap-(--site-padding-xl) justify-items-center items-center"
         >
           <!-- Left Column: Text Content -->
-          <div class="space-y-(--site-padding-lg)">
-            <h2 class="text-secondary font-museo-slab-rounded">CORE TECHNOLOGY</h2>
-
-            <div class="space-y-(--site-padding-base)">
-              <p class="text-base-100">
+          <div class="space-y-(--site-padding-base)">
+            <h2 class="text-secondary font-museo-slab-rounded uppercase">CORE TECHNOLOGY</h2>
+            <div class="space-y-(--site-padding-sm)">
+              <p>
                 Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae
                 praecatur, que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in
                 et, esenet as aut di officiidis cum verrorem vid endaepe rionsed quam, seritatur,
                 sit qui del intios exeri consequi dolupta vent ius expla perrupt aerferro it illae
                 ne plaboreribus eostium et hicia commis sin est, consed que optae
               </p>
-
-              <p class="text-base-100">
+              <p>
                 Rore in et, esenet as aut di officiidis cum verrorem vid endaepe rionsed quam,
                 seritatur, sit qui del intios exeri consequi dolupta vent ius expla perrupt aerferro
                 it illae ne plaboreribus eostium et hicia commis sin est, consed que optae
@@ -127,6 +128,81 @@ import Layout from '../layouts/Layout.astro'
                 <circle cx="140" cy="10" r="3" fill="var(--color-accent)"></circle>
               </svg>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="wrapper">
+        <div class="space-y-(--site-padding-base) max-w-4xl">
+          <h2 class="text-secondary font-museo-slab-rounded uppercase">Product Development</h2>
+
+          <p class="mb-(--site-padding-lg)">
+            Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae praecatur,
+            que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in et, esenet as
+            aut di officidis cum verrorem vid endaepe rionsed quam, seritatur, sit qui del intios
+            exeri consequi dolupta vent ius expla perrupt aerferro il iliae ne
+          </p>
+
+          <div class="flex flex-col gap-(--site-padding-lg)">
+            <article
+              class="relative w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
+            >
+              <Image
+                src={CollagenTexture}
+                alt="Illustration of collagen regeneration"
+                width={CollagenTexture.width}
+                height={CollagenTexture.height}
+                class="max-h-50 lg:max-h-none"
+              />
+              <div class="flex flex-col gap-(--site-padding-base) p-(--site-padding-lg) lg:py-0">
+                <h3 class="font-museo-slab-rounded uppercase">Collagen Regeneration</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos
+                  aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa,
+                  atque libero dolor ratione animi pariatur tenetur? Commodi!
+                </p>
+              </div>
+            </article>
+            <article
+              class="relative w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
+            >
+              <Image
+                src={BoneTexture}
+                alt="Illustration of bone regeneration"
+                width={BoneTexture.width}
+                height={BoneTexture.height}
+                class="max-h-50 lg:max-h-none"
+              />
+              <div class="flex flex-col gap-(--site-padding-base) p-(--site-padding-lg) lg:py-0">
+                <h3 class="font-museo-slab-rounded uppercase">Bone Regeneration via BMP-2</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos
+                  aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa,
+                  atque libero dolor ratione animi pariatur tenetur? Commodi!
+                </p>
+              </div>
+            </article>
+            <article
+              class="relative w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
+            >
+              <Image
+                src={PillsTexture}
+                alt="Illustration of pill regeneration"
+                width={PillsTexture.width}
+                height={PillsTexture.height}
+                class="max-h-50 lg:max-h-none"
+              />
+              <div class="flex flex-col gap-(--site-padding-base) p-(--site-padding-lg) lg:py-0">
+                <h3 class="font-museo-slab-rounded uppercase">Nutraceutical Development</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos
+                  aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa,
+                  atque libero dolor ratione animi pariatur tenetur? Commodi!
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
