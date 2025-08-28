@@ -131,7 +131,7 @@
   }
 
   .wrapper {
-    @apply w-full max-w-screen-xl mx-auto py-(--site-padding-base) px-(--site-padding-xl);
+    @apply w-full mx-auto max-w-screen-xl py-(--site-padding-base) pl-(--site-padding-base) pr-(--site-padding-base) md:pl-(--site-padding-5xl) md:pr-(--site-padding-4xl);
   }
 
   section {

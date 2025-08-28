@@ -9,60 +9,59 @@ import FrameBioCollagenBar from '../assets/images/frame-bio_infographic-collagen
 import PillsTexture from '../assets/images/frame-bio_pills-texture.svg'
 import FrameBioPipelineGrid from '../assets/images/frame-bio_pipeline-grid-section.svg'
 import SkinBoneAxisLockup from '../assets/images/frame-bio_skin-bone-axis-lockup.svg'
-import TitleVertical from '../assets/images/frame-bio_title-vertical.svg'
 import highResImage from '../assets/images/high-res-exosome-image.png'
-import Navigation from '../components/ui/Navigation.astro'
+import Header from '../components/ui/Header.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-  <header>
-    <TitleVertical class="fixed left-(--site-padding-base) top-(--site-padding-6xl) h-auto w-16" />
-    <Navigation />
-  </header>
-  <main>
-    <section id="about" class="wrapper">
-      <div
-        id="targeted-therapies-grid"
-        class="grid md:grid-cols-2 gap-x-(--site-padding-base) gap-y-(--site-padding-lg)"
-      >
-        <FrameBioFigure class="h-auto max-w-lg mr-auto" />
-        <div
-          class="flex flex-col gap-(--site-padding-base) w-[calc(100%-var(--site-padding-base)*2)] mt-(--site-padding-lg)"
-        >
-          <h3>Targeted therapies for the</h3>
-          <SkinBoneAxisLockup class="max-w-sm" />
-          <h4 class="text-secondary">Lorem ipsum dolor se moluptat a vellisque aborum etur?</h4>
-          <div class="grid md:grid-cols-2 gap-(--site-padding-base)">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
+  <Header />
 
-        <!-- Treatment Tags - Second Row, Spanning Both Columns -->
-        <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="flex items-center gap-2">
-            <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
-            <p class="h5 font-museo-slab-rounded">Bone</p>
+  <main>
+    <section id="about">
+      <div class="wrapper">
+        <div
+          id="targeted-therapies-grid"
+          class="grid md:grid-cols-2 gap-x-(--site-padding-base) gap-y-(--site-padding-lg)"
+        >
+          <FrameBioFigure class="hidden md:block h-auto max-w-lg mr-auto" />
+          <div class="flex flex-col gap-(--site-padding-base) w-full mt-(--site-padding-lg)">
+            <h3>Targeted therapies for the</h3>
+            <SkinBoneAxisLockup class="max-w-md" />
+            <h4 class="text-secondary">Lorem ipsum dolor se moluptat a vellisque aborum etur?</h4>
+            <div class="grid md:grid-cols-2 gap-(--site-padding-base)">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
           </div>
-          <div class="flex items-center gap-2">
-            <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
-            <p class="h5 font-museo-slab-rounded">Collagen</p>
+
+          <!-- Treatment Tags - Second Row, Spanning Both Columns -->
+          <div class="md:col-span-2 grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+              <p class="h5 font-museo-slab-rounded">Bone</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+              <p class="h5 font-museo-slab-rounded">Collagen</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+              <p class="h5 font-museo-slab-rounded">Tendons/Joints</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+              <p class="h5 font-museo-slab-rounded">Cartilage</p>
+            </div>
           </div>
-          <div class="flex items-center gap-2">
-            <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
-            <p class="h5 font-museo-slab-rounded">Tendons/Joints</p>
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
-            <p class="h5 font-museo-slab-rounded">Cartilage</p>
-          </div>
+
+          <FrameBioFigure class="block md:hidden h-auto max-w-lg mr-auto" />
         </div>
       </div>
     </section>
@@ -151,7 +150,7 @@ import Layout from '../layouts/Layout.astro'
 
           <div class="flex flex-col gap-(--site-padding-lg)">
             <article
-              class="relative w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
+              class="relative lg:w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
             >
               <Image
                 src={CollagenTexture}
@@ -160,7 +159,9 @@ import Layout from '../layouts/Layout.astro'
                 height={CollagenTexture.height}
                 class="max-h-50 lg:max-h-none"
               />
-              <div class="flex flex-col gap-(--site-padding-base) p-(--site-padding-lg) lg:py-0">
+              <div
+                class="flex flex-col gap-(--site-padding-base) p-(--site-padding-md) lg:p-(--site-padding-lg) lg:py-0"
+              >
                 <h3 class="font-museo-slab-rounded uppercase">Collagen Regeneration</h3>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos
@@ -170,7 +171,7 @@ import Layout from '../layouts/Layout.astro'
               </div>
             </article>
             <article
-              class="relative w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
+              class="relative lg:w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
             >
               <Image
                 src={BoneTexture}
@@ -179,7 +180,9 @@ import Layout from '../layouts/Layout.astro'
                 height={BoneTexture.height}
                 class="max-h-50 lg:max-h-none"
               />
-              <div class="flex flex-col gap-(--site-padding-base) p-(--site-padding-lg) lg:py-0">
+              <div
+                class="flex flex-col gap-(--site-padding-base) p-(--site-padding-md) lg:p-(--site-padding-lg) lg:py-0"
+              >
                 <h3 class="font-museo-slab-rounded uppercase">Bone Regeneration via BMP-2</h3>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos
@@ -189,7 +192,7 @@ import Layout from '../layouts/Layout.astro'
               </div>
             </article>
             <article
-              class="relative w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
+              class="relative lg:w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
             >
               <Image
                 src={PillsTexture}
@@ -198,7 +201,9 @@ import Layout from '../layouts/Layout.astro'
                 height={PillsTexture.height}
                 class="max-h-50 lg:max-h-none"
               />
-              <div class="flex flex-col gap-(--site-padding-base) p-(--site-padding-lg) lg:py-0">
+              <div
+                class="flex flex-col gap-(--site-padding-base) p-(--site-padding-md) lg:p-(--site-padding-lg) lg:py-0"
+              >
                 <h3 class="font-museo-slab-rounded uppercase">Nutraceutical Development</h3>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos
@@ -355,10 +360,13 @@ import Layout from '../layouts/Layout.astro'
       </div>
     </section>
 
-    <!-- TODO: finish -->
-    <section id="contact">
-      <div class="wrapper p-(--site-padding-lg) shadow-[0_0_10px] shadow-secondary">
-        <div class="space-y-(--site-padding-base)">
+    <section id="contact" class="relative">
+      <div
+        class="left-0 top-0 absolute w-full md:w-[calc(100%-var(--site-padding-4xl))] xl:w-[calc(100%-var(--site-padding-5xl))] h-full shadow-[0_0_10px] shadow-secondary z-0 animate-pulse"
+      >
+      </div>
+      <div class="wrapper">
+        <div class="space-y-(--site-padding-base) md:pr-(--site-padding-md)">
           <h2 class="text-secondary font-museo-slab-rounded uppercase">Contact Frame Bio</h2>
           <p>
             Nestium expliquia dessitiones dolutemquas aut et ut haritate cus vent eatium evenist,
@@ -466,7 +474,7 @@ import Layout from '../layouts/Layout.astro'
             </fieldset>
 
             <div
-              class="flex flex-col justify-between gap-(--site-padding-sm) mt-(--site-padding-lg)"
+              class="flex flex-col justify-between gap-(--site-padding-base) mt-(--site-padding-lg)"
             >
               <p class="text-sm text-accent">
                 .Tiamenderitat dolorep eriatioris et moluptam abo. Met rerempo rehenimet aut vit as
@@ -476,7 +484,9 @@ import Layout from '../layouts/Layout.astro'
               </p>
               <!-- Submit Button -->
               <div class="flex md:justify-end mb-8">
-                <button type="submit" class="btn btn-lg btn-info">Submit Info</button>
+                <button type="submit" class="btn btn-md btn-info text-lg md:text-xl"
+                  >Submit Info</button
+                >
               </div>
             </div>
 

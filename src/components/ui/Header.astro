@@ -1,0 +1,274 @@
+---
+import TitleHorizontal from '../../assets/images/frame-bio_title-horizontal.svg'
+import TitleVertical from '../../assets/images/frame-bio_title-vertical.svg'
+---
+
+<header>
+  <h1 class="sr-only">Frame Bio</h1>
+
+  <nav
+    id="main-nav"
+    class="fixed group top-(--site-padding-3xl) md:top-(--site-padding-base) right-(--site-padding-base) md:right-(--site-padding-lg) py-(--site-padding-base) md:px-(--site-padding-base) z-1000 transition-all duration-300 ease-in-out"
+    aria-label="Primary navigation"
+  >
+    <a href="/">
+      <TitleVertical
+        class="hidden md:block fixed left-(--site-padding-base) top-(--site-padding-6xl) w-16 z-1000"
+      />
+    </a>
+    <a href="/">
+      <TitleHorizontal
+        id="mobile-logo"
+        class="block md:hidden fixed top-(--site-padding-base) left-(--site-padding-base) right-(--site-padding-base) w-[93.7%] max-w-lg z-1000 transition-transform duration-300 ease-in-out"
+      />
+    </a>
+    <!-- Icons column -->
+    <ul
+      id="nav-icons"
+      class="relative z-150 flex flex-col items-end gap-4 [.nav-open_&]:px-(--site-padding-base) md:[.nav-open_&]:px-0 transition-all duration-300 md:text-secondary text-primary [.nav-open_&]:text-primary"
+    >
+      <li>
+        <button
+          type="button"
+          aria-label="Menu"
+          aria-controls="nav-modal"
+          aria-expanded="false"
+          id="menu-btn"
+          class="relative p-0 m-0 w-6 h-6"
+        >
+          <!-- Hamburger lines that stretch to the left when open -->
+          <div class="absolute top-0 right-0 flex flex-col gap-1.5">
+            <span
+              class="hamburger-line block h-0.5 bg-secondary transition-width duration-300 w-6 origin-[right_center]"
+            ></span>
+            <span
+              class="hamburger-line block h-0.5 bg-secondary transition-width duration-300 delay-75 w-6 origin-[right_center]"
+            ></span>
+            <span
+              class="hamburger-line block h-0.5 bg-secondary transition-width duration-300 delay-150 w-6 origin-[right_center]"
+            ></span>
+          </div>
+        </button>
+      </li>
+      <li
+        class="opacity-0 invisible -z-10 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-10 md:visible md:opacity-100 md:z-10 transition-all duration-300"
+      >
+        <a href="tel:+1234567890" aria-label="Call">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M22 16.92V19a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13 1.13.37 2.25.72 3.32a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c1.07.35 2.19.59 3.32.72a2 2 0 0 1 1.72 2z"
+            ></path>
+          </svg>
+        </a>
+      </li>
+      <li
+        class="opacity-0 invisible -z-10 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-10 md:visible md:opacity-100 md:z-10 transition-all duration-300"
+      >
+        <a href="mailto:info@example.com" aria-label="Email">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="4" y="5" width="16" height="14" rx="3" ry="3"></rect>
+            <polyline points="4 7 12 13 20 7"></polyline>
+          </svg>
+        </a>
+      </li>
+      <li
+        class="opacity-0 invisible -z-10 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-10 md:visible md:opacity-100 md:z-10 transition-all duration-300"
+      >
+        <a href="#top" aria-label="Back to Top">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="6" y1="6" x2="18" y2="6"></line>
+            <polyline points="6 14 12 8 18 14"></polyline>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Modal panel -->
+    <div
+      id="nav-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site menu"
+      class="nav-modal absolute top-0 right-0 pointer-events-none opacity-0 translate-y-2 transition-all duration-300 w-xs bg-primary-content text-primary shadow-xl px-(--site-padding-base) pt-(--site-padding-xl) pb-(--site-padding-base) [&.modal-open]:opacity-100 [&.modal-open]:translate-y-0 [&.modal-open]:pointer-events-auto z-100"
+    >
+      <!-- Menu links -->
+      <ul class="flex flex-col gap-5 font-bold uppercase tracking-tight">
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#our-tech">Our Tech</a>
+        </li>
+        <li>
+          <a href="#products">Products</a>
+        </li>
+        <li>
+          <a href="#pipeline">Pipeline</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const root = document.getElementById('main-nav') as HTMLElement | null
+  const btn = document.getElementById('menu-btn') as HTMLButtonElement | null
+  const icons = document.getElementById('nav-icons') as HTMLElement | null
+  const modal = document.getElementById('nav-modal') as HTMLElement | null
+  const mobileLogo = document.getElementById('mobile-logo') as HTMLElement | null
+  const stretches = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>
+
+  // Scroll state
+  let lastScrollY = 0
+  let isScrollingDown = false
+
+  // State helpers
+  const getIsOpen = (): boolean => root?.classList.contains('nav-open') || false
+
+  const setState = (open: boolean) => {
+    if (!root || !icons || !modal || !btn) return
+
+    if (open) {
+      root.classList.add('nav-open')
+      modal.classList.add('modal-open')
+    } else {
+      root.classList.remove('nav-open')
+      modal.classList.remove('modal-open')
+    }
+
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false')
+
+    // Stretch the hamburger lines to the left to align with menu text
+    if (open && modal) {
+      // Get the hamburger button position
+      const btnRect = btn.getBoundingClientRect()
+      const modalRect = modal.getBoundingClientRect()
+
+      // Calculate distance from right edge of hamburger to left edge of menu text
+      // This accounts for the modal's left padding where the text starts
+      const computedStyle = getComputedStyle(modal)
+      const leftPadding = parseFloat(computedStyle.paddingLeft)
+
+      // Distance from hamburger right edge to menu text left edge
+      const targetWidth = btnRect.right - (modalRect.left + leftPadding)
+
+      stretches.forEach((el: HTMLElement) => {
+        el.style.width = `${targetWidth}px`
+        el.style.transform = 'translateX(0)' // Keep at original position
+      })
+    } else {
+      // Reset to hamburger icon state
+      stretches.forEach((el: HTMLElement) => {
+        el.style.width = '24px'
+        el.style.transform = 'translateX(0)'
+      })
+    }
+  }
+
+  // Handle scroll for mobile logo
+  const handleScroll = () => {
+    if (!mobileLogo || !root) return
+
+    const currentScrollY = window.scrollY
+    const scrollThreshold = 50
+
+    // Determine scroll direction
+    const scrollingDown = currentScrollY > lastScrollY && currentScrollY > scrollThreshold
+
+    // Only update if direction changed to avoid excessive DOM manipulation
+    if (scrollingDown !== isScrollingDown) {
+      isScrollingDown = scrollingDown
+
+      if (scrollingDown) {
+        // Hide logo, move nav to top
+        mobileLogo.style.transform = 'translateY(-130%)'
+        root.style.top = 'var(--site-padding-base)'
+      } else {
+        // Show logo, restore nav position
+        mobileLogo.style.transform = 'translateY(0)'
+        root.style.top = 'var(--site-padding-3xl)'
+      }
+    }
+
+    lastScrollY = currentScrollY
+  }
+
+  const closeNav = () => setState(false)
+  const toggleNav = () => setState(!getIsOpen())
+
+  // Event handlers
+  const handleMenuButtonClick = (e: Event) => {
+    e.preventDefault()
+    toggleNav()
+  }
+
+  const handleKeydown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') closeNav()
+  }
+
+  const handleDocumentClick = (e: MouseEvent) => {
+    if (!root || !modal) return
+    if (!getIsOpen()) return
+    const target = e.target as Node
+    if (!modal.contains(target) && !root.contains(target)) {
+      closeNav()
+    }
+  }
+
+  const handleModalClick = (e: MouseEvent) => {
+    const target = e.target as HTMLElement
+    if (target && target.closest('a')) closeNav()
+  }
+
+  // Throttle scroll handler for performance
+  let scrollTimeout: number | null = null
+  const throttledScroll = () => {
+    if (scrollTimeout) return
+    scrollTimeout = requestAnimationFrame(() => {
+      handleScroll()
+      scrollTimeout = null
+    })
+  }
+
+  // Init
+  const init = () => {
+    setState(false)
+    btn?.addEventListener('click', handleMenuButtonClick)
+    window.addEventListener('keydown', handleKeydown)
+    window.addEventListener('scroll', throttledScroll, { passive: true })
+    document.addEventListener('click', handleDocumentClick)
+    modal?.addEventListener('click', handleModalClick)
+  }
+
+  init()
+</script>
