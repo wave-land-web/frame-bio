@@ -9,6 +9,7 @@ import FrameBioPipelineGrid from '../assets/images/frame-bio_pipeline-grid-secti
 import SkinBoneAxisLockup from '../assets/images/frame-bio_skin-bone-axis-lockup.svg'
 import highResImage from '../assets/images/high-res-exosome-image.png'
 import Header from '../components/ui/Header.astro'
+import ProductCard from '../components/ui/ProductCard.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
@@ -21,12 +22,16 @@ import Layout from '../layouts/Layout.astro'
           id="targeted-therapies-grid"
           class="grid md:grid-cols-2 gap-x-(--site-padding-base) gap-y-(--site-padding-lg)"
         >
-          <FrameBioFigure class="hidden md:block h-auto max-w-lg mr-auto" />
-          <div class="flex flex-col gap-(--site-padding-base) w-full mt-(--site-padding-lg)">
+          <FrameBioFigure
+            class="hidden md:block h-auto max-w-lg mr-auto lsa lsa-slide-left no-repeat"
+          />
+          <div
+            class="flex flex-col gap-(--site-padding-base) w-full mt-(--site-padding-lg) lsa lsa-slide-right no-repeat"
+          >
             <h3>Targeted therapies for the</h3>
             <SkinBoneAxisLockup class="max-w-md" />
             <h4 class="text-secondary">Lorem ipsum dolor se moluptat a vellisque aborum etur?</h4>
-            <div class="grid md:grid-cols-2 gap-(--site-padding-base)">
+            <div class="space-y-(--site-padding-sm)">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.
@@ -39,7 +44,9 @@ import Layout from '../layouts/Layout.astro'
           </div>
 
           <!-- Treatment Tags - Second Row, Spanning Both Columns -->
-          <div class="md:col-span-2 grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div
+            class="md:col-span-2 grid grid-cols-2 lg:grid-cols-4 gap-4 lsa lsa-slide-up no-repeat"
+          >
             <div class="flex items-center gap-2">
               <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
               <p class="h5 font-museo-slab-rounded">Bone</p>
@@ -58,7 +65,9 @@ import Layout from '../layouts/Layout.astro'
             </div>
           </div>
 
-          <FrameBioFigure class="block md:hidden h-auto max-w-lg mr-auto" />
+          <FrameBioFigure
+            class="block md:hidden h-auto max-w-lg mr-auto lsa lsa-slide-left no-repeat"
+          />
         </div>
       </div>
     </section>
@@ -69,7 +78,7 @@ import Layout from '../layouts/Layout.astro'
           class="grid lg:grid-cols-[1fr_500px] gap-(--site-padding-xl) justify-items-center items-center"
         >
           <!-- Left Column: Text Content -->
-          <div class="space-y-(--site-padding-base)">
+          <div class="space-y-(--site-padding-base) lsa lsa-slide-left no-repeat">
             <h2 class="text-secondary font-museo-slab-rounded uppercase">CORE TECHNOLOGY</h2>
             <div class="space-y-(--site-padding-sm)">
               <p>
@@ -88,7 +97,9 @@ import Layout from '../layouts/Layout.astro'
           </div>
 
           <!-- Right Column: Exosome Image with Static Annotations -->
-          <div class="relative w-full h-auto max-w-[500px] max-h-[500px] mx-auto text-accent">
+          <div
+            class="relative w-full h-auto max-w-[500px] max-h-[500px] mx-auto text-accent lsa lsa-slide-right no-repeat"
+          >
             <Image
               src={highResImage}
               alt="High resolution exosome structure"
@@ -136,79 +147,47 @@ import Layout from '../layouts/Layout.astro'
     <section id="products">
       <div class="wrapper">
         <div class="space-y-(--site-padding-base) max-w-4xl">
-          <h2 class="text-secondary font-museo-slab-rounded uppercase">Product Development</h2>
-
-          <p class="mb-(--site-padding-lg)">
+          <h2 class="text-secondary font-museo-slab-rounded uppercase lsa lsa-slide-left no-repeat">
+            Product Development
+          </h2>
+          <p class="mb-(--site-padding-lg) lsa lsa-slide-right no-repeat">
             Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae praecatur,
             que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in et, esenet as
             aut di officidis cum verrorem vid endaepe rionsed quam, seritatur, sit qui del intios
             exeri consequi dolupta vent ius expla perrupt aerferro il iliae ne
           </p>
 
+          <!-- Product Cards -->
           <div class="flex flex-col gap-(--site-padding-lg)">
-            <article
-              class="relative lg:w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
-            >
-              <Image
-                src={CollagenTexture}
-                alt="Illustration of collagen regeneration"
-                width={CollagenTexture.width}
-                height={CollagenTexture.height}
-                class="max-h-50 lg:max-h-none"
-              />
-              <div
-                class="flex flex-col gap-(--site-padding-base) p-(--site-padding-md) lg:p-(--site-padding-lg) lg:py-0"
-              >
-                <h3 class="font-museo-slab-rounded uppercase">Collagen Regeneration</h3>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos
-                  aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa,
-                  atque libero dolor ratione animi pariatur tenetur? Commodi!
-                </p>
-              </div>
-            </article>
-            <article
-              class="relative lg:w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
-            >
-              <Image
-                src={BoneTexture}
-                alt="Illustration of bone regeneration"
-                width={BoneTexture.width}
-                height={BoneTexture.height}
-                class="max-h-50 lg:max-h-none"
-              />
-              <div
-                class="flex flex-col gap-(--site-padding-base) p-(--site-padding-md) lg:p-(--site-padding-lg) lg:py-0"
-              >
-                <h3 class="font-museo-slab-rounded uppercase">Bone Regeneration via BMP-2</h3>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos
-                  aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa,
-                  atque libero dolor ratione animi pariatur tenetur? Commodi!
-                </p>
-              </div>
-            </article>
-            <article
-              class="relative lg:w-screen grid lg:grid-cols-[250px_1fr] items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary"
-            >
-              <Image
-                src={PillsTexture}
-                alt="Illustration of pill regeneration"
-                width={PillsTexture.width}
-                height={PillsTexture.height}
-                class="max-h-50 lg:max-h-none"
-              />
-              <div
-                class="flex flex-col gap-(--site-padding-base) p-(--site-padding-md) lg:p-(--site-padding-lg) lg:py-0"
-              >
-                <h3 class="font-museo-slab-rounded uppercase">Nutraceutical Development</h3>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos
-                  aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa,
-                  atque libero dolor ratione animi pariatur tenetur? Commodi!
-                </p>
-              </div>
-            </article>
+            <ProductCard
+              title="Collagen Regeneration"
+              description={[
+                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
+                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
+              ]}
+              image={CollagenTexture}
+              imageAlt="Illustration of collagen regeneration"
+            />
+
+            <ProductCard
+              title="Bone Regeneration via BMP-2"
+              description={[
+                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
+                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
+              ]}
+              image={BoneTexture}
+              imageAlt="Illustration of bone regeneration"
+            />
+
+            <ProductCard
+              title="Nutraceutical Development"
+              description={[
+                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
+                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
+              ]}
+              image={PillsTexture}
+              imageAlt="Illustration of pill regeneration"
+            />
           </div>
         </div>
       </div>
@@ -221,7 +200,7 @@ import Layout from '../layouts/Layout.astro'
           <div
             class="grid lg:grid-cols-2 items-end justify-items-center xl:justify-items-normal gap-(--site-padding-base)"
           >
-            <div class="lg:flex justify-end lg:order-2">
+            <div class="lg:flex justify-end lg:order-2 lsa lsa-slide-right no-repeat">
               <Image
                 src={FrameBioFigureTwo}
                 alt="Drug Development Pipeline"
@@ -229,7 +208,7 @@ import Layout from '../layouts/Layout.astro'
               />
             </div>
             <h2
-              class="text-secondary xl:text-nowrap font-museo-slab-rounded uppercase text-4xl lg:text-5xl"
+              class="text-secondary xl:text-nowrap font-museo-slab-rounded uppercase text-4xl lg:text-5xl lsa lsa-slide-left no-repeat"
             >
               Drug Development Pipeline
             </h2>
@@ -238,7 +217,7 @@ import Layout from '../layouts/Layout.astro'
           <!-- Pipeline Charts -->
 
           <!-- Desktop -->
-          <div class="hidden xl:block space-y-(--site-padding-lg)">
+          <div class="hidden xl:block space-y-(--site-padding-lg) lsa lsa-slide-up no-repeat">
             <!-- Column Headers -->
             <div class="grid grid-cols-4 gap-(--site-padding-base) mb-(--site-padding-base)">
               <div></div>
@@ -366,7 +345,9 @@ import Layout from '../layouts/Layout.astro'
           </div>
 
           <!-- Mobile -->
-          <div class="mx-auto flex flex-col items-center xl:hidden gap-(--site-padding-lg)">
+          <div
+            class="mx-auto flex flex-col items-center xl:hidden gap-(--site-padding-lg) lsa lsa-slide-up no-repeat"
+          >
             <!-- Column Headers -->
             <div
               class="grid grid-cols-[1fr_3fr_3fr] gap-(--site-padding-base) mb-(--site-padding-base)"
@@ -397,7 +378,7 @@ import Layout from '../layouts/Layout.astro'
                     <!-- Line -->
                     <div
                       class="absolute top-2.5 left-1/2 -translate-x-1/2 w-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
-                      style="height: 100%"
+                      style="height: 200%"
                     >
                     </div>
                   </div>
@@ -416,7 +397,7 @@ import Layout from '../layouts/Layout.astro'
                     <!-- Line -->
                     <div
                       class="absolute top-2.5 left-1/2 -translate-x-1/2 w-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
-                      style="height: 200%"
+                      style="height: 100%"
                     >
                     </div>
                   </div>
@@ -487,8 +468,10 @@ import Layout from '../layouts/Layout.astro'
       </div>
       <div class="wrapper">
         <div class="space-y-(--site-padding-base) md:pr-(--site-padding-md)">
-          <h2 class="text-secondary font-museo-slab-rounded uppercase">Contact Frame Bio</h2>
-          <p>
+          <h2 class="text-secondary font-museo-slab-rounded uppercase lsa lsa-slide-left no-repeat">
+            Contact Frame Bio
+          </h2>
+          <p class="lsa lsa-slide-right no-repeat">
             Nestium expliquia dessitiones dolutemquas aut et ut haritate cus vent eatium evenist,
             natuscium faccum quatia. Rem quatest, eum qui ilit officimus ut faciuri deliquas enieni
             con rehenda ndunte posaepudam, unda sunt et ut vel molor autempor sapienes derciisquiam
@@ -594,7 +577,7 @@ import Layout from '../layouts/Layout.astro'
             </fieldset>
 
             <div
-              class="flex flex-col justify-between gap-(--site-padding-base) mt-(--site-padding-lg)"
+              class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) mt-(--site-padding-lg)"
             >
               <p class="text-sm text-accent">
                 .Tiamenderitat dolorep eriatioris et moluptam abo. Met rerempo rehenimet aut vit as
@@ -602,12 +585,7 @@ import Layout from '../layouts/Layout.astro'
                 nis excessum id ute suntur repraes eum et eturiamus estias nis porehen dipsundissit
                 dus as rerum con pos autem il imaxim conestem.
               </p>
-              <!-- Submit Button -->
-              <div class="flex md:justify-end mb-8">
-                <button type="submit" class="btn btn-md btn-info text-lg md:text-xl"
-                  >Submit Info</button
-                >
-              </div>
+              <button type="submit" class="button">Submit Info</button>
             </div>
 
             <!-- Form Messages -->

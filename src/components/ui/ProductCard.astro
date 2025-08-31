@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets'
+
+export interface Props {
+  title: string
+  description: string[]
+  image: ImageMetadata
+  imageAlt: string
+}
+
+const { title, description, image, imageAlt } = Astro.props
+---
+
+<article
+  class="relative lg:w-screen grid lg:grid-cols-[250px_1fr] lg:grid-rows-[auto_1fr] h-auto items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary lsa lsa-slide-right no-repeat"
+>
+  <Image
+    src={image.src}
+    alt={imageAlt}
+    width={image.width}
+    height={image.height}
+    class="max-h-50 lg:max-h-none h-full"
+  />
+  <div
+    class="flex flex-col gap-(--site-padding-base) p-(--site-padding-md) lg:p-(--site-padding-lg) lg:w-2/3"
+  >
+    <h3 class="font-museo-slab-rounded uppercase">{title}</h3>
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-(--site-padding-base)">
+      {description.map((line) => <p>{line}</p>)}
+    </div>
+  </div>
+</article>
