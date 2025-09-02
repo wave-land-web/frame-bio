@@ -30,8 +30,7 @@ export default defineConfig({
     prefetchAll: true,
   },
 
-  experimental: {
-    // Museo fonts are loaded via Typekit in the layout head
+  devToolbar: {
+    enabled: false,
   },
-
 })

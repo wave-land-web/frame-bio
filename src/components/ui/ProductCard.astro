@@ -1,18 +1,22 @@
 ---
 import { Image } from 'astro:assets'
+import NumeralOne from '../../assets/images/frame-bio_numeral-1.svg'
+import NumeralTwo from '../../assets/images/frame-bio_numeral-2.svg'
+import NumeralThree from '../../assets/images/frame-bio_numeral-3.svg'
 
 export interface Props {
   title: string
   description: string[]
   image: ImageMetadata
   imageAlt: string
+  numeral?: number
 }
 
-const { title, description, image, imageAlt } = Astro.props
+const { title, description, image, imageAlt, numeral } = Astro.props
 ---
 
 <article
-  class="relative lg:w-screen grid lg:grid-cols-[250px_1fr] lg:grid-rows-[auto_1fr] h-auto items-center shadow-[0_0_10px] shadow-accent z-100 bg-primary lsa lsa-slide-right no-repeat"
+  class="relative lg:w-screen grid lg:grid-cols-[250px_auto_1fr] lg:grid-rows-[auto_1fr] h-auto shadow-[0_0_10px] shadow-accent z-100 bg-primary lsa lsa-slide-right no-repeat"
 >
   <Image
     src={image.src}
@@ -21,12 +25,19 @@ const { title, description, image, imageAlt } = Astro.props
     height={image.height}
     class="max-h-50 lg:max-h-none h-full"
   />
+
   <div
-    class="flex flex-col gap-(--site-padding-base) p-(--site-padding-md) lg:p-(--site-padding-lg) lg:w-2/3"
+    class="flex gap-(--site-padding-md) lg:gap-(--site-padding-base) p-(--site-padding-md) lg:pl-(--site-padding-base) lg:py-(--site-padding-md) lg:pr-0"
   >
-    <h3 class="font-museo-slab-rounded uppercase">{title}</h3>
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-(--site-padding-base)">
-      {description.map((line) => <p>{line}</p>)}
+    {numeral === 1 && <NumeralOne class="size-24" />}
+    {numeral === 2 && <NumeralTwo class="size-24" />}
+    {numeral === 3 && <NumeralThree class="size-24" />}
+
+    <div class="flex flex-col gap-(--site-padding-base) lg:w-[58%]">
+      <h3 class="font-museo-slab-rounded uppercase">{title}</h3>
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-(--site-padding-base)">
+        {description.map((line) => <p>{line}</p>)}
+      </div>
     </div>
   </div>
 </article>

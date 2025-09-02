@@ -1,8 +1,24 @@
 ---
+import { getImage } from 'astro:assets'
+import CollagenTexture from '../../assets/images/frame-bio_collagen-texture-rotated.svg'
 import TitleHorizontal from '../../assets/images/frame-bio_title-horizontal.svg'
+
+const CollagenTextureImage = await getImage({ src: CollagenTexture, inferSize: true })
 ---
 
 <footer class="relative bg-primary-content text-primary z-1000">
+  <!-- 
+  TODO: if we want to overlay texture 
+  <div
+    class="hidden md:block absolute top-0 right-0 w-(--site-padding-lg) h-full"
+    style={`
+        background-image: url('${CollagenTextureImage.src}');
+        background-repeat: repeat;
+        background-size: 6rem 6rem;
+        background-color: #605A75;
+      `}
+  >
+  </div> -->
   <div class="wrapper grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-lg)">
     <div>
       <!-- Logo -->
