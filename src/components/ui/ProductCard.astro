@@ -33,10 +33,14 @@ const { title, description, image, imageAlt, numeral } = Astro.props
     {numeral === 2 && <NumeralTwo class="size-24" />}
     {numeral === 3 && <NumeralThree class="size-24" />}
 
-    <div class="flex flex-col gap-(--site-padding-base) lg:w-[58%]">
+    <div class="flex flex-col gap-(--site-padding-base) lg:w-[58%] xl:w-[55%]">
       <h3 class="font-museo-slab-rounded uppercase">{title}</h3>
       <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-(--site-padding-base)">
-        {description.map((line) => <p>{line}</p>)}
+        {
+          description.map((line) => (
+            <p class="font-museo-slab-rounded text-sm sm:text-base">{line}</p>
+          ))
+        }
       </div>
     </div>
   </div>

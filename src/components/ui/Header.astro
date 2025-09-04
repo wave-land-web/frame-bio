@@ -82,7 +82,7 @@ import Phone from '../../assets/images/phone.svg'
       role="dialog"
       aria-modal="true"
       aria-label="Site menu"
-      class="nav-modal absolute top-0 right-0 pointer-events-none opacity-0 translate-y-2 transition-all duration-300 w-xs bg-primary-content text-primary shadow-xl px-(--site-padding-base) pt-(--site-padding-xl) pb-(--site-padding-base) [&.modal-open]:opacity-100 [&.modal-open]:translate-y-0 [&.modal-open]:pointer-events-auto z-100"
+      class="absolute top-0 right-0 pointer-events-none opacity-0 translate-y-2 transition-all duration-300 w-xs bg-primary-content text-primary shadow-xl px-(--site-padding-base) pt-(--site-padding-xl) pb-(--site-padding-base) [&.modal-open]:opacity-100 [&.modal-open]:translate-y-0 [&.modal-open]:pointer-events-auto z-100"
     >
       <!-- Menu links -->
       <ul class="flex flex-col gap-5 font-bold uppercase tracking-tight">
@@ -121,6 +121,39 @@ import Phone from '../../assets/images/phone.svg'
   // State helpers
   const getIsOpen = (): boolean => root?.classList.contains('nav-open') || false
 
+  // Calculate hamburger stretch width based on current viewport
+  const calculateStretchWidth = (): number => {
+    if (!btn || !modal) return 16
+
+    const btnRect = btn.getBoundingClientRect()
+    const modalRect = modal.getBoundingClientRect()
+    const computedStyle = getComputedStyle(modal)
+    const leftPadding = parseFloat(computedStyle.paddingLeft)
+
+    // IF on mobile, double the left padding
+    if (window.innerWidth <= 768) {
+      return btnRect.right - (modalRect.left + leftPadding * 2)
+    }
+
+    return btnRect.right - (modalRect.left + leftPadding)
+  }
+
+  // Update hamburger line widths
+  const updateHamburgerLines = (open: boolean) => {
+    if (open) {
+      const targetWidth = calculateStretchWidth()
+      stretches.forEach((el: HTMLElement) => {
+        el.style.width = `${targetWidth}px`
+        el.style.transform = 'translateX(0)'
+      })
+    } else {
+      stretches.forEach((el: HTMLElement) => {
+        el.style.width = '24px'
+        el.style.transform = 'translateX(0)'
+      })
+    }
+  }
+
   const setState = (open: boolean) => {
     if (!root || !icons || !modal || !btn) return
 
@@ -133,32 +166,7 @@ import Phone from '../../assets/images/phone.svg'
     }
 
     btn.setAttribute('aria-expanded', open ? 'true' : 'false')
-
-    // Stretch the hamburger lines to the left to align with menu text
-    if (open && modal) {
-      // Get the hamburger button position
-      const btnRect = btn.getBoundingClientRect()
-      const modalRect = modal.getBoundingClientRect()
-
-      // Calculate distance from right edge of hamburger to left edge of menu text
-      // This accounts for the modal's left padding where the text starts
-      const computedStyle = getComputedStyle(modal)
-      const leftPadding = parseFloat(computedStyle.paddingLeft)
-
-      // Distance from hamburger right edge to menu text left edge
-      const targetWidth = btnRect.right - (modalRect.left + leftPadding)
-
-      stretches.forEach((el: HTMLElement) => {
-        el.style.width = `${targetWidth}px`
-        el.style.transform = 'translateX(0)' // Keep at original position
-      })
-    } else {
-      // Reset to hamburger icon state
-      stretches.forEach((el: HTMLElement) => {
-        el.style.width = '24px'
-        el.style.transform = 'translateX(0)'
-      })
-    }
+    updateHamburgerLines(open)
   }
 
   // Handle scroll for mobile logo

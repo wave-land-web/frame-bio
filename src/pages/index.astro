@@ -198,20 +198,18 @@ import Layout from '../layouts/Layout.astro'
 
     <section id="pipeline" class="bg-primary text-primary-content">
       <div class="wrapper">
-        <div class="space-y-(--site-padding-2xl)">
+        <div class="flex flex-col items-center gap-y-(--site-padding-2xl)">
           <!-- Header with Title and Figure -->
-          <div
-            class="grid lg:grid-cols-2 items-end justify-items-center xl:justify-items-normal gap-(--site-padding-base)"
-          >
-            <div class="lg:flex justify-end lg:order-2 lsa lsa-slide-right no-repeat">
+          <div class="grid xl:grid-cols-2 items-end gap-(--site-padding-base)">
+            <div class="xl:order-2 lsa lsa-slide-right no-repeat">
               <Image
                 src={FrameBioFigureTwo}
-                alt="Drug Development Pipeline"
-                class="h-auto max-w-sm"
+                alt="Illustration of person in a crow pose yoga position"
+                class="h-auto mx-auto block max-w-xl"
               />
             </div>
             <h2
-              class="text-secondary xl:text-nowrap font-museo-slab-rounded uppercase text-4xl lg:text-5xl lsa lsa-slide-left no-repeat"
+              class="text-secondary font-museo-slab-rounded uppercase text-4xl lg:text-5xl lsa lsa-slide-left no-repeat"
             >
               Drug Development Pipeline
             </h2>
