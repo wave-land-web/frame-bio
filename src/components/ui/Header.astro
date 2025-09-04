@@ -173,6 +173,8 @@ import Phone from '../../assets/images/phone.svg'
   const handleScroll = () => {
     if (!mobileLogo || !root) return
 
+    if (window.innerWidth >= 768) return
+
     const currentScrollY = window.scrollY
     const scrollThreshold = 50
 
