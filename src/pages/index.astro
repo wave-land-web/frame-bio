@@ -197,271 +197,283 @@ import Layout from '../layouts/Layout.astro'
     </section>
 
     <section id="pipeline" class="bg-primary text-primary-content">
-      <div class="wrapper">
-        <div class="flex flex-col items-center gap-y-(--site-padding-2xl)">
-          <!-- Header with Title and Figure -->
-          <div class="grid xl:grid-cols-2 items-end gap-(--site-padding-base)">
-            <div class="xl:order-2 lsa lsa-slide-right no-repeat">
-              <Image
-                src={FrameBioFigureTwo}
-                alt="Illustration of person in a crow pose yoga position"
-                class="h-auto mx-auto block max-w-xl"
-              />
-            </div>
-            <h2
-              class="text-secondary xl:text-nowrap font-museo-slab-rounded uppercase text-4xl lg:text-5xl lsa lsa-slide-left no-repeat"
-            >
-              Drug Development Pipeline
-            </h2>
+      <div class="wrapper xl:pt-100">
+        <!-- Header with Title and Figure -->
+        <div
+          class="relative grid xl:grid-cols-2 items-end gap-(--site-padding-base) mb-(--site-padding-2xl)"
+        >
+          <div class="xl:order-2 lsa lsa-slide-right no-repeat xl:absolute xl:-right-100 w-full">
+            <Image
+              src={FrameBioFigureTwo}
+              alt="Illustration of person in a crow pose yoga position"
+              class="h-auto mx-auto block w-full max-w-xl"
+            />
           </div>
-
-          <!-- Pipeline Charts -->
-
-          <!-- Desktop -->
-          <div class="hidden xl:block space-y-(--site-padding-lg) lsa lsa-slide-up no-repeat">
-            <!-- Column Headers -->
-            <div class="grid grid-cols-4 gap-(--site-padding-base) mb-(--site-padding-base)">
-              <div></div>
-              <!-- Empty space for row labels -->
-              <div class="text-center">
-                <h4 class="text-accent uppercase text-xl">Discovery</h4>
-              </div>
-              <div class="text-center">
-                <h4 class="text-accent uppercase text-xl">Pre-Clinical</h4>
-              </div>
-              <div class="text-center">
-                <h4 class="text-accent uppercase text-xl">IND-Enabling</h4>
-              </div>
-            </div>
-
-            <div
-              class="grid grid-cols-4 gap-(--site-padding-base) items-center mb-(--site-padding-lg)"
-            >
-              <!-- Row Labels -->
-              <div class="space-y-8">
-                <div class="space-y-2">
-                  <h4 class="text-xl font-museo-slab-rounded font-bold uppercase text-secondary">
-                    BMP-2
-                  </h4>
-                  <p class="text-lg leading-tight">
-                    <span class="uppercase"
-                      >Bone Morphogenic<br />
-                      Protein</span
-                    > via mRNA
-                  </p>
-                </div>
-                <!-- Row Label -->
-                <div class="space-y-2">
-                  <h4 class="font-museo-slab-rounded font-bold uppercase text-secondary text-xl">
-                    Collagen 1
-                  </h4>
-                  <p class="text-lg leading-tight">
-                    <span class="uppercase"
-                      >Collagen Protein<br />
-                      Regeneration</span
-                    > via mRNA
-                  </p>
-                </div>
-              </div>
-
-              <!-- Grid Background (3 sections) -->
-              <div class="col-span-3 relative">
-                <div class="grid grid-cols-3 gap-8">
-                  <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-                  <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-                  <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-                </div>
-
-                <!-- 1st Progress Bar Overlay -->
-                <div class="absolute top-12 left-0 w-1/2 flex items-center">
-                  <div class="relative w-full h-6 flex items-center">
-                    <!-- Circle -->
-                    <div
-                      class="absolute left-0 w-5 h-5 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full z-1"
-                    >
-                    </div>
-                    <!-- Line -->
-                    <div
-                      class="absolute left-2.5 h-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
-                      style="width: 100%;"
-                    >
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 2nd Progress Bar Overlay -->
-                <div class="absolute bottom-12 left-0 w-1/4 flex items-center">
-                  <div class="relative w-full h-6 flex items-center">
-                    <!-- Circle -->
-                    <div
-                      class="absolute left-0 w-5 h-5 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full z-1"
-                    >
-                    </div>
-                    <!-- Line -->
-                    <div
-                      class="absolute left-2.5 h-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
-                      style="width: 100%;"
-                    >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Footer Text -->
-            <div class="flex justify-between gap-8">
-              <p class="max-w-2xl">
-                Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae
-                praecatur, que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in
-                et, esenet as aut di officiidis cum verrorem vid endaepe rionsed quam, seritatur,
-                sit qui del intios exeri consequi dolupta vent ius expla perrupt aerferro it illae
-                ne plaboreribus eostium et hicia commis sin est.
-              </p>
-
-              <!-- Bottom Right Icon/Text -->
-
-              <div class="flex flex-col gap-4 text-accent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  width="24px"
-                  viewBox="0 -960 960 960"
-                  fill="currentColor"
-                  class="size-8"
-                  ><path
-                    d="M401 0q-83 0-156-31.5t-127.5-86Q63-172 31.5-245T0-400q0-83 31.5-156t86-127.5Q172-738 245-769.5T401-801q10 0 19.5.5T440-799v80q-10-1-19.5-1.5T401-721q-134 0-227.5 93.5T80-400q0 133 93.5 226.5T401-80q133 0 226.5-93.5T721-400h80q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T401 0Zm131-212L360-384v-216h80v184l148 148-56 56Zm342-268q-23-142-120-246.5T520-866v-82q171 37 290.5 165T955-480h-81Zm-163 0q-19-75-69.5-132T520-698v-85q103 32 177 113.5T793-480h-82Z"
-                  ></path></svg
-                >
-                <p class="text-sm text-accent leading-tight">
-                  Porta aut auda norunt niis<br />
-                  aute volore autectur<br />
-                  volupti lectature volorest<br />
-                  et ma vent prem volupt<br />
-                  dimis molorem curn. e<br />
-                  corporibus aut et temporibus<br />
-                  magnatur?
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mobile -->
-          <div
-            class="mx-auto flex flex-col items-center xl:hidden gap-(--site-padding-lg) lsa lsa-slide-up no-repeat"
+          <h2
+            class="text-secondary xl:text-nowrap font-museo-slab-rounded uppercase text-4xl lg:text-5xl lsa lsa-slide-left no-repeat"
           >
-            <!-- Column Headers -->
-            <div
-              class="grid grid-cols-[1fr_3fr_3fr] justify-items-center gap-(--site-padding-base) mb-(--site-padding-base)"
-            >
-              <div></div>
-              <!-- Empty space for row labels -->
-              <div class="text-center">
-                <h4 class="text-secondary uppercase">BMP-2</h4>
-              </div>
-              <div class="text-center">
-                <h4 class="text-secondary uppercase">Collagen 1</h4>
-              </div>
+            Drug Development Pipeline
+          </h2>
+        </div>
+
+        <!-- Pipeline Charts -->
+
+        <!-- Desktop -->
+        <div class="hidden xl:block space-y-(--site-padding-lg) lsa lsa-slide-up no-repeat">
+          <!-- Column Headers -->
+          <div class="grid grid-cols-4 gap-(--site-padding-base) mb-(--site-padding-base)">
+            <div></div>
+            <!-- Empty space for row labels -->
+            <div class="text-center">
+              <h4 class="text-accent uppercase text-xl">Discovery</h4>
             </div>
-
-            <!-- Discovery Row -->
-            <div
-              class="grid grid-cols-[1fr_3fr_3fr] justify-items-center gap-(--site-padding-base) items-center"
-            >
-              <h4 class="[writing-mode:vertical-rl] text-accent uppercase">Discovery</h4>
-              <div class="relative">
-                <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-                <!-- BMP-2 Progress Bar for Discovery -->
-                <div class="absolute inset-0 flex justify-center items-center">
-                  <div class="relative h-full w-6 flex justify-center">
-                    <!-- Circle -->
-                    <div
-                      class="absolute top-0 w-5 h-5 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full z-1"
-                    >
-                    </div>
-                    <!-- Line -->
-                    <div
-                      class="absolute top-2.5 left-1/2 -translate-x-1/2 w-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
-                      style="height: 200%"
-                    >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="relative">
-                <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-                <!-- Collagen Progress Bar for Discovery -->
-                <div class="absolute inset-0 flex justify-center items-center">
-                  <div class="relative h-full w-6 flex justify-center">
-                    <!-- Circle -->
-                    <div
-                      class="absolute top-0 w-5 h-5 bg-white rounded-full z-1 shadow-[0_0_0_6px_var(--color-base-200)]"
-                    >
-                    </div>
-                    <!-- Line -->
-                    <div
-                      class="absolute top-2.5 left-1/2 -translate-x-1/2 w-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
-                      style="height: 100%"
-                    >
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="text-center">
+              <h4 class="text-accent uppercase text-xl">Pre-Clinical</h4>
             </div>
-
-            <!-- Pre-Clinical Row -->
-            <div
-              class="grid grid-cols-[1fr_3fr_3fr] justify-items-center gap-(--site-padding-base) items-center"
-            >
-              <h4 class="[writing-mode:vertical-rl] text-accent uppercase">Pre-Clinical</h4>
-              <div class="relative">
-                <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-              </div>
-              <div class="relative">
-                <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-              </div>
+            <div class="text-center">
+              <h4 class="text-accent uppercase text-xl">IND-Enabling</h4>
             </div>
+          </div>
 
-            <!-- IND-Enabling Row -->
-            <div
-              class="grid grid-cols-[1fr_3fr_3fr] justify-items-center gap-(--site-padding-base) items-center"
-            >
-              <h4 class="[writing-mode:vertical-rl] text-accent uppercase">IND-Enabling</h4>
-              <div class="relative">
-                <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-              </div>
-              <div class="relative">
-                <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-              </div>
-            </div>
-
-            <!-- Mobile Footer Text -->
-            <div class="space-y-(--site-padding-base) mt-(--site-padding-lg)">
-              <p class="text-sm">
-                Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae
-                praecatur, que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in
-                et, esenet as aut di officiidis cum verrorem vid endaepe rionsed quam, seritatur,
-                sit qui del intios exeri consequi dolupta vent ius expla perrupt aerferro it illae
-                ne plaboreribus eostium et hicia commis sin est.
-              </p>
-
-              <!-- Bottom Icon/Text for Mobile -->
-              <div class="flex items-center gap-4 text-accent">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  width="24px"
-                  viewBox="0 -960 960 960"
-                  fill="currentColor"
-                  class="size-6 flex-shrink-0"
-                  ><path
-                    d="M401 0q-83 0-156-31.5t-127.5-86Q63-172 31.5-245T0-400q0-83 31.5-156t86-127.5Q172-738 245-769.5T401-801q10 0 19.5.5T440-799v80q-10-1-19.5-1.5T401-721q-134 0-227.5 93.5T80-400q0 133 93.5 226.5T401-80q133 0 226.5-93.5T721-400h80q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T401 0Zm131-212L360-384v-216h80v184l148 148-56 56Zm342-268q-23-142-120-246.5T520-866v-82q171 37 290.5 165T955-480h-81Zm-163 0q-19-75-69.5-132T520-698v-85q103 32 177 113.5T793-480h-82Z"
-                  ></path></svg
-                >
-                <p class="text-xs leading-tight">
-                  Porta aut auda norunt niis aute volore autectur volupti lectature volorest et ma
-                  vent prem volupt dimis molorem curn. e corporibus aut et temporibus magnatur?
+          <div
+            class="grid grid-cols-4 gap-(--site-padding-base) items-center mb-(--site-padding-lg)"
+          >
+            <!-- Row Labels -->
+            <div class="space-y-8">
+              <div class="space-y-2">
+                <h4 class="text-xl font-museo-slab-rounded font-bold uppercase text-secondary">
+                  BMP-2
+                </h4>
+                <p class="leading-tight">
+                  <span class="uppercase"
+                    >Bone Morphogenic<br />
+                    Protein</span
+                  > via mRNA
                 </p>
               </div>
+              <!-- Row Label -->
+              <div class="space-y-2">
+                <h4 class="font-museo-slab-rounded font-bold uppercase text-secondary text-xl">
+                  Collagen 1
+                </h4>
+                <p class="leading-tight">
+                  <span class="uppercase"
+                    >Collagen Protein<br />
+                    Regeneration</span
+                  > via mRNA
+                </p>
+              </div>
+            </div>
+
+            <!-- Grid Background (3 sections) -->
+            <div class="col-span-3 relative">
+              <div class="grid grid-cols-3 gap-8">
+                <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
+                <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
+                <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
+              </div>
+
+              <!-- 1st Progress Bar Overlay -->
+              <div class="absolute top-12 left-0 w-1/2 flex items-center">
+                <div class="relative w-full h-6 flex items-center">
+                  <!-- Circle -->
+                  <div
+                    class="absolute left-0 w-5 h-5 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full z-1"
+                  >
+                  </div>
+                  <!-- Line -->
+                  <div
+                    class="absolute left-2.5 h-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
+                    style="width: 100%;"
+                  >
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2nd Progress Bar Overlay -->
+              <div class="absolute bottom-12 left-0 w-1/4 flex items-center">
+                <div class="relative w-full h-6 flex items-center">
+                  <!-- Circle -->
+                  <div
+                    class="absolute left-0 w-5 h-5 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full z-1"
+                  >
+                  </div>
+                  <!-- Line -->
+                  <div
+                    class="absolute left-2.5 h-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
+                    style="width: 100%;"
+                  >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Text -->
+          <div class="flex justify-between gap-8">
+            <p class="max-w-2xl">
+              Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae praecatur,
+              que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in et, esenet as
+              aut di officiidis cum verrorem vid endaepe rionsed quam, seritatur, sit qui del intios
+              exeri consequi dolupta vent ius expla perrupt aerferro it illae ne plaboreribus
+              eostium et hicia commis sin est.
+            </p>
+
+            <!-- Bottom Right Icon/Text -->
+
+            <div class="flex flex-col gap-4 text-accent">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                width="24px"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="size-8"
+                ><path
+                  d="M401 0q-83 0-156-31.5t-127.5-86Q63-172 31.5-245T0-400q0-83 31.5-156t86-127.5Q172-738 245-769.5T401-801q10 0 19.5.5T440-799v80q-10-1-19.5-1.5T401-721q-134 0-227.5 93.5T80-400q0 133 93.5 226.5T401-80q133 0 226.5-93.5T721-400h80q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T401 0Zm131-212L360-384v-216h80v184l148 148-56 56Zm342-268q-23-142-120-246.5T520-866v-82q171 37 290.5 165T955-480h-81Zm-163 0q-19-75-69.5-132T520-698v-85q103 32 177 113.5T793-480h-82Z"
+                ></path></svg
+              >
+              <p class="text-sm text-accent leading-tight">
+                Porta aut auda norunt niis<br />
+                aute volore autectur<br />
+                volupti lectature volorest<br />
+                et ma vent prem volupt<br />
+                dimis molorem curn. e<br />
+                corporibus aut et temporibus<br />
+                magnatur?
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <div
+          class="mx-auto flex flex-col items-center xl:hidden gap-(--site-padding-lg) lsa lsa-slide-up no-repeat"
+        >
+          <!-- Column Headers -->
+          <div
+            class="w-full grid grid-cols-[1fr_4fr_4fr] gap-(--site-padding-base) mb-(--site-padding-base)"
+          >
+            <div></div>
+            <!-- Empty space for row labels -->
+            <div>
+              <h4 class="text-secondary uppercase">BMP-2</h4>
+              <p class="leading-tight">
+                <span class="uppercase"
+                  >Bone Morphogenic<br />
+                  Protein</span
+                > via mRNA
+              </p>
+            </div>
+            <div>
+              <h4 class="text-secondary uppercase">Collagen 1</h4>
+              <p class="leading-tight">
+                <span class="uppercase"
+                  >Collagen Protein<br />
+                  Regeneration</span
+                > via mRNA
+              </p>
+            </div>
+          </div>
+
+          <!-- Discovery Row -->
+          <div class="grid grid-cols-[1fr_4fr_4fr] justify-items-center items-center">
+            <h4 class="[writing-mode:vertical-rl] mr-(--site-padding-base) text-accent uppercase">
+              Discovery
+            </h4>
+            <div class="relative">
+              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
+              <!-- BMP-2 Progress Bar for Discovery -->
+              <div class="absolute inset-0 flex justify-center items-center">
+                <div class="relative h-full w-6 flex justify-center">
+                  <!-- Circle -->
+                  <div
+                    class="absolute top-0 w-5 h-5 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full z-1"
+                  >
+                  </div>
+                  <!-- Line -->
+                  <div
+                    class="absolute top-2.5 left-1/2 -translate-x-1/2 w-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
+                    style="height: 200%"
+                  >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative">
+              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
+              <!-- Collagen Progress Bar for Discovery -->
+              <div class="absolute inset-0 flex justify-center items-center">
+                <div class="relative h-full w-6 flex justify-center">
+                  <!-- Circle -->
+                  <div
+                    class="absolute top-0 w-5 h-5 bg-white rounded-full z-1 shadow-[0_0_0_6px_var(--color-base-200)]"
+                  >
+                  </div>
+                  <!-- Line -->
+                  <div
+                    class="absolute top-2.5 left-1/2 -translate-x-1/2 w-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
+                    style="height: 100%"
+                  >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pre-Clinical Row -->
+          <div class="grid grid-cols-[1fr_4fr_4fr] justify-items-center items-center">
+            <h4 class="[writing-mode:vertical-rl] mr-(--site-padding-base) text-accent uppercase">
+              Pre-Clinical
+            </h4>
+            <div class="relative">
+              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
+            </div>
+            <div class="relative">
+              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
+            </div>
+          </div>
+
+          <!-- IND-Enabling Row -->
+          <div class="grid grid-cols-[1fr_4fr_4fr] justify-items-center items-center">
+            <h4 class="[writing-mode:vertical-rl] mr-(--site-padding-base) text-accent uppercase">
+              IND-Enabling
+            </h4>
+            <div class="relative">
+              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
+            </div>
+            <div class="relative">
+              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
+            </div>
+          </div>
+
+          <!-- Mobile Footer Text -->
+          <div class="space-y-(--site-padding-base) mt-(--site-padding-lg)">
+            <p class="text-sm">
+              Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae praecatur,
+              que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in et, esenet as
+              aut di officiidis cum verrorem vid endaepe rionsed quam, seritatur, sit qui del intios
+              exeri consequi dolupta vent ius expla perrupt aerferro it illae ne plaboreribus
+              eostium et hicia commis sin est.
+            </p>
+
+            <!-- Bottom Icon/Text for Mobile -->
+            <div class="flex items-center gap-4 text-accent">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                width="24px"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="size-6 flex-shrink-0"
+                ><path
+                  d="M401 0q-83 0-156-31.5t-127.5-86Q63-172 31.5-245T0-400q0-83 31.5-156t86-127.5Q172-738 245-769.5T401-801q10 0 19.5.5T440-799v80q-10-1-19.5-1.5T401-721q-134 0-227.5 93.5T80-400q0 133 93.5 226.5T401-80q133 0 226.5-93.5T721-400h80q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T401 0Zm131-212L360-384v-216h80v184l148 148-56 56Zm342-268q-23-142-120-246.5T520-866v-82q171 37 290.5 165T955-480h-81Zm-163 0q-19-75-69.5-132T520-698v-85q103 32 177 113.5T793-480h-82Z"
+                ></path></svg
+              >
+              <p class="text-xs leading-tight">
+                Porta aut auda norunt niis aute volore autectur volupti lectature volorest et ma
+                vent prem volupt dimis molorem curn. e corporibus aut et temporibus magnatur?
+              </p>
             </div>
           </div>
         </div>
@@ -471,7 +483,7 @@ import Layout from '../layouts/Layout.astro'
     <section id="contact" class="relative">
       <!-- Pulse Effect -->
       <div
-        class="left-0 top-0 absolute w-full h-full md:w-[calc(100%-var(--site-padding-4xl))] xl:w-[calc(100%-var(--site-padding-5xl))] shadow-[0_0_10px] shadow-secondary z-0 animate-pulse"
+        class="left-0 top-0 absolute w-full h-full md:w-[calc(100%-var(--site-padding-4xl))] xl:w-[calc(100%-var(--site-padding-5xl))] shadow-[0_0_20px] shadow-secondary z-0 animate-pulse"
       >
       </div>
       <!-- Background -->

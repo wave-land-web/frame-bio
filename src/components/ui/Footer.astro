@@ -6,7 +6,7 @@ import Phone from '../../assets/images/phone.svg'
 import ToTop from '../../assets/images/to-top.svg'
 ---
 
-<footer class="relative bg-primary-content text-primary z-1000">
+<footer class="relative bg-primary-content text-primary z-1000 font-museo-slab-rounded">
   <div class="wrapper grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-lg)">
     <div>
       <!-- Logo -->
@@ -24,23 +24,20 @@ import ToTop from '../../assets/images/to-top.svg'
         <!-- Address -->
         <a
           href="https://www.google.com/maps?q=555+NW+Street+St+%23113+Portland,+OR+97209"
-          class="flex items-start gap-3 w-full"
+          class="flex items-center gap-3 w-full"
         >
           <LocationPin class="size-8" />
-          <div>
-            <p>555 NW Street St #113</p>
-            <p>Portland, OR 97209</p>
-          </div>
+          <p class="w-36 text-sm leading-tight">555 NW Street St #113 Portland, OR 97209</p>
         </a>
 
         <!-- Phone -->
-        <a href="tel:+15555550044" class="flex items-center gap-3 w-full">
+        <a href="tel:+15555550044" class="flex items-center gap-3 w-full text-sm">
           <Phone class="size-8" />
           <span>(555) 555-0044</span>
         </a>
 
         <!-- Email -->
-        <a href="mailto:hello@frame.bio" class="flex items-center gap-3 w-full">
+        <a href="mailto:hello@frame.bio" class="flex items-center gap-3 w-full text-sm">
           <Email class="size-8" />
           <span>hello@frame.bio</span>
         </a>
@@ -51,14 +48,14 @@ import ToTop from '../../assets/images/to-top.svg'
     <div class="flex flex-col items-end justify-between h-full gap-2 text-right">
       <!-- Back to Top -->
       <a href="#top" class="flex items-start gap-2">
-        <span class="uppercase w-24 leading-tight">Back to the top</span>
-        <ToTop class="size-6" />
+        <span class="uppercase w-24 text-sm leading-tight">Back to the top</span>
+        <ToTop class="size-8" />
       </a>
 
       <!-- Copyright -->
-      <div class="text-sm opacity-60">
+      <p class="text-sm leading-tight">
         Copyright {new Date().getFullYear()}, Frame Bio LLC | All rights reserved.
-      </div>
+      </p>
     </div>
   </div>
 </footer>
