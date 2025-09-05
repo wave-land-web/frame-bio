@@ -16,11 +16,14 @@ import Phone from '../../assets/images/phone.svg'
 
   <nav
     id="main-nav"
-    class="fixed w-full md:w-fit group top-(--site-padding-base) md:right-(--site-padding-lg) py-(--site-padding-base) md:py-(--site-padding-sm) z-3 transition-all duration-300 ease-in-out"
+    class="fixed w-full md:w-fit group md:top-(--site-padding-base) pt-(--site-padding-md) md:right-(--site-padding-lg) py-(--site-padding-base) md:py-(--site-padding-sm) z-3 transition-all duration-300 ease-in-out max-md:bg-gradient-to-b from-primary to-transparent"
     aria-label="Primary navigation"
   >
     <!-- Nav items -->
-    <div class="w-full relative px-(--site-padding-base) flex items-start justify-between gap-4">
+    <div
+      id="nav-items"
+      class="w-full relative px-(--site-padding-base) flex items-start justify-between gap-4"
+    >
       <!-- Mobile Logo -->
       <a href="/" class="block md:hidden">
         <TitleHorizontal id="mobile-logo" />
@@ -84,7 +87,7 @@ import Phone from '../../assets/images/phone.svg'
       role="dialog"
       aria-modal="true"
       aria-label="Site menu"
-      class="absolute top-0 right-0 pointer-events-none opacity-0 translate-y-2 transition-all duration-300 w-xs bg-primary-content text-primary shadow-xl px-(--site-padding-base) pt-(--site-padding-xl) pb-(--site-padding-md) [&.modal-open]:opacity-100 [&.modal-open]:translate-y-0 [&.modal-open]:pointer-events-auto z-50"
+      class="absolute top-0 right-0 pointer-events-none opacity-0 translate-y-2 transition-all duration-300 w-xs bg-primary-content text-primary shadow-xl px-(--site-padding-base) pt-(--site-padding-2xl) md:pt-(--site-padding-xl) pb-(--site-padding-md) [&.modal-open]:opacity-100 [&.modal-open]:translate-y-0 [&.modal-open]:pointer-events-auto z-50"
     >
       <!-- Menu links -->
       <ul class="flex flex-col gap-5 font-bold uppercase tracking-tight">
