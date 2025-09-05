@@ -17,6 +17,7 @@ import Layout from '../layouts/Layout.astro'
   <Header />
   <main class="pb-0">
     <section id="about" class="md:pt-0">
+      <h2 class="sr-only">About Frame Bio</h2>
       <div class="wrapper">
         <div
           id="targeted-therapies-grid"
@@ -28,15 +29,23 @@ import Layout from '../layouts/Layout.astro'
           <div class="flex flex-col gap-(--site-padding-base) w-full lsa lsa-slide-right no-repeat">
             <h3>Targeted therapies for the</h3>
             <SkinBoneAxisLockup class="max-w-md" />
-            <h4 class="text-secondary">Lorem ipsum dolor se moluptat a vellisque aborum etur?</h4>
+            <h4 class="text-secondary">
+              A Novel Paradigm for Relieving Structural Diseases & Disorders
+            </h4>
             <div class="space-y-(--site-padding-sm)">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
+                With nearly one-third of the world's people affected by skin diseases, and more than
+                200 million people worldwide suffering from osteoporosis, there is a great need for
+                therapies targeting skin and bone issues. At Frame Bio, we're developing better
+                methods for delivering such therapies directly to bones, joints, tendons, and
+                collagen with the goal of enhancing the body's natural repair processes.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
+                Emerging research suggests that our skin and bones may be more connected than we
+                thought. Through hormones, vitamins, and the immune system, it appears that these
+                two systems talk to each other; when one is struggling, the other often does too.
+                This crosstalk, known as the skin-bone axis, is seen in the relationship between
+                skin diseases and bone disease and serves as inspiration for Frame Bio's research.
               </p>
             </div>
           </div>
@@ -80,16 +89,19 @@ import Layout from '../layouts/Layout.astro'
             <h2 class="text-secondary font-museo-slab-rounded uppercase">CORE TECHNOLOGY</h2>
             <div class="space-y-(--site-padding-sm)">
               <p>
-                Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae
-                praecatur, que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in
-                et, esenet as aut di officiidis cum verrorem vid endaepe rionsed quam, seritatur,
-                sit qui del intios exeri consequi dolupta vent ius expla perrupt aerferro it illae
-                ne plaboreribus eostium et hicia commis sin est, consed que optae
+                One of the best ways to improve the success of a drug in development is to ensure
+                that it reaches the areas of the body that need it most. This cannot only improve
+                the overall efficacy of the drug, but also reduce the negative side effects that can
+                often accompany off-target delivery. When therapeutics are directed to where they're
+                needed most versus being diluted across unrelated organs and bodily systems, their
+                potency is naturally increased.
               </p>
               <p>
-                Rore in et, esenet as aut di officiidis cum verrorem vid endaepe rionsed quam,
-                seritatur, sit qui del intios exeri consequi dolupta vent ius expla perrupt aerferro
-                it illae ne plaboreribus eostium et hicia commis sin est, consed que optae
+                At Frame Bio, we've employed a novel method of extracellular vesicle (EV) drug
+                encapsulation developed by Mercury Bio Inc. to deliver therapies directly to injured
+                bone, joints, and other tissues. Mercury Bio's yEV™ technology works with the
+                body's natural transport system—targeting cells with a high level of precision and
+                depositing molecular therapies directly to them.
               </p>
             </div>
           </div>
@@ -109,29 +121,16 @@ import Layout from '../layouts/Layout.astro'
             <!-- First annotation - center left area -->
             <div class="absolute top-full left-0 w-[180px]">
               <p class="text-xs leading-tight">
-                Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae
-                praecatur, que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in
-                et, esenet as aut di officiidis cum verrorem vid endaepe
+                An extracellular vesicle is a nanoscale, membrane-bound particle (about 30-1000
+                nanometers in diameter) that cells naturally release for intercellular
+                communication. They carry proteins, lipids, and nucleic acids to transmit signals
+                and regulate the behavior of other cells.
               </p>
               <!-- Horizontal line with circle - rotate with CSS transform as needed -->
               <svg
                 class="absolute -top-20 left-1/2 -rotate-60 w-[150px] h-[20px]"
                 viewBox="0 0 150 20"
               >
-                <line x1="0" y1="10" x2="140" y2="10" stroke="var(--color-accent)" stroke-width="2"
-                ></line>
-                <circle cx="140" cy="10" r="3" fill="var(--color-accent)"></circle>
-              </svg>
-            </div>
-
-            <!-- Second annotation - bottom right area -->
-            <div class="absolute -bottom-8 right-0 w-50 text-right">
-              <p class="text-xs leading-tight">
-                Equis et minis nobit derum aperspid quatio. Rore in et, esenet as aut di officiidis
-                cum verrorem vid endaepe
-              </p>
-              <!-- Horizontal line with circle - rotate with CSS transform as needed -->
-              <svg class="absolute -top-20 w-[150px] h-[20px] rotate-225" viewBox="0 0 150 20">
                 <line x1="0" y1="10" x2="140" y2="10" stroke="var(--color-accent)" stroke-width="2"
                 ></line>
                 <circle cx="140" cy="10" r="3" fill="var(--color-accent)"></circle>
@@ -151,19 +150,19 @@ import Layout from '../layouts/Layout.astro'
           <p
             class="mb-(--site-padding-lg) lsa lsa-slide-right no-repeat max-w-(--content-max-width)"
           >
-            Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae praecatur,
-            que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in et, esenet as
-            aut di officidis cum verrorem vid endaepe rionsed quam, seritatur, sit qui del intios
-            exeri consequi dolupta vent ius expla perrupt aerferro il iliae ne
+            Currently, Frame Bio is researching three unique product lines, each addressing
+            different components of the skin-bone axis, with the aim of improving quality of life
+            for millions of people suffering from inflammation and discomfort tied to bone disease
+            and connective tissue disorders.
           </p>
 
           <!-- Product Cards -->
-          <div class="flex flex-col gap-(--site-padding-lg)">
+          <div class="h-full flex flex-col gap-(--site-padding-lg)">
             <ProductCard
               title="Collagen Regeneration"
               description={[
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
+                'Collagen is fiber-like structural protein found in tendons, ligaments, joints, and bones. Many collagen diseases are autoimmune, resulting from an overactive immune system that mistakenly attacks healthy collagen. Current treatments for collagen disorders tend to focus on reducing inflammation and improving mobility. This can be accomplished with medication, surgery, dietary supplements, or a combination of these.',
+                "Frame Bio's research aims to develop targeted collagen therapies that augment natural regenerative processes. This means fewer surgical interventions and a decreased need for medications that affect the entire body. By delivering signaling proteins to the source of skin and bone disease, Frame Bio's novel therapeutics look beyond mere symptom relief in favor of returning tissues to fundamentally healthier states.",
               ]}
               image={CollagenTexture}
               imageAlt="Illustration of collagen regeneration"
@@ -173,8 +172,8 @@ import Layout from '../layouts/Layout.astro'
             <ProductCard
               title="Bone Regeneration via BMP-2"
               description={[
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
+                'Bones are in a constant state of growth and deterioration. When the balance between these processes is altered, bone density is affected. Historically, treatment of low bone density has included dietary supplements and medications called bisphosphonates. Unwanted side effects, and the low benefit of long-term use, have revealed the need for better treatment options. Recent research has explored the use of a naturally produced protein called BMP, or bone morphogenetic protein. BMP-2 is currently approved by the FDA to heal fractures in certain bones, and in spinal fusion surgery. While the success of various forms of BMP in improving bone remodeling has been demonstrated, better delivery methods are needed to control the timing and location of BMP release within the body.',
+                "Frame Bio's solution has been to turn to hydroxyapatite, a form of calcium that is found naturally in bones and teeth, which can improve the binding of BMP-2 to bone tissues, thereby delivering it directly to damaged bone. Through a research partnership with Himed LLC, one of the world's leading producers of hydroxyapatite technologies used to enhance orthopedic devices, we've identified a means of deploying BMP-2 in bone scaffolding materials commonly used to repair hard tissue breaks and fractures. And we're future-proofing this application method by exploring how it translates into the new world of patient-specific 3D-printed implants, so that as healthcare becomes even more personalized and customized, our technology is ready.",
               ]}
               image={BoneTexture}
               imageAlt="Illustration of bone regeneration"
@@ -184,8 +183,8 @@ import Layout from '../layouts/Layout.astro'
             <ProductCard
               title="Nutraceutical Development"
               description={[
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
-                'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error eius dignissimos aperiam ducimus neque et numquam minus dolorum minima saepe voluptatibus culpa, atque libero dolor ratione animi pariatur tenetur? Commodi!',
+                'A nutraceutical is a food-derived product—ranging from isolated nutrients to herbal extracts—used for health benefits beyond basic nutrition. In the context of bone and joint health, widely studied examples include calcium and vitamin D for maintaining bone density; collagen peptides, glucosamine, and chondroitin for supporting cartilage and joint comfort; omega-3 fatty acids and curcumin for their anti-inflammatory properties; and isoflavones or hyaluronic acid for reinforcing bone strength and joint lubrication.',
+                "Even when these compounds have plausible biological roles, their benefits are often limited by poor bioavailability and off-target delivery, leaving only small amounts to reach bone or cartilage in effective concentrations. The use of a targeted drug delivery system addresses these challenges, opening the door to maximizing nutraceutical efficacy. Frame Bio's initial focus is on natural compounds with strong anti-inflammatory activity that may help reduce reliance on NSAID painkillers for connective tissue pain.",
               ]}
               image={PillsTexture}
               imageAlt="Illustration of pill regeneration"
@@ -210,7 +209,7 @@ import Layout from '../layouts/Layout.astro'
             />
           </div>
           <h2
-            class="text-secondary xl:text-nowrap font-museo-slab-rounded uppercase text-4xl lg:text-5xl lsa lsa-slide-left no-repeat"
+            class="text-secondary text-center xl:text-nowrap font-museo-slab-rounded uppercase text-4xl lg:text-5xl lsa lsa-slide-left no-repeat"
           >
             Drug Development Pipeline
           </h2>
@@ -248,7 +247,7 @@ import Layout from '../layouts/Layout.astro'
                   <span class="uppercase"
                     >Bone Morphogenic<br />
                     Protein</span
-                  > via mRNA
+                  >
                 </p>
               </div>
               <!-- Row Label -->
@@ -260,7 +259,7 @@ import Layout from '../layouts/Layout.astro'
                   <span class="uppercase"
                     >Collagen Protein<br />
                     Regeneration</span
-                  > via mRNA
+                  >
                 </p>
               </div>
             </div>
@@ -312,14 +311,14 @@ import Layout from '../layouts/Layout.astro'
           <!-- Footer Text -->
           <div class="flex justify-between gap-8">
             <p class="max-w-2xl">
-              Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae praecatur,
-              que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in et, esenet as
-              aut di officiidis cum verrorem vid endaepe rionsed quam, seritatur, sit qui del intios
-              exeri consequi dolupta vent ius expla perrupt aerferro it illae ne plaboreribus
-              eostium et hicia commis sin est.
+              Frame Bio has two therapies already under development: one which targets bone
+              regeneration, and another that aims to strengthen connective tissues by catalyzing
+              collagen production. Both product lines harness the intercellular communications that
+              occur with extra cellular vesicles to deliver therapeutics which trigger the body's
+              natural healing processes.
             </p>
 
-            <!-- Bottom Right Icon/Text -->
+            <!-- Caption -->
 
             <div class="flex flex-col gap-4 text-accent">
               <svg
@@ -334,13 +333,12 @@ import Layout from '../layouts/Layout.astro'
                 ></path></svg
               >
               <p class="text-sm text-accent leading-tight">
-                Porta aut auda norunt niis<br />
-                aute volore autectur<br />
-                volupti lectature volorest<br />
-                et ma vent prem volupt<br />
-                dimis molorem curn. e<br />
-                corporibus aut et temporibus<br />
-                magnatur?
+                Want to stay connected to Frame Bio's product development process? <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  class="link text-sm leading-tight">Follow our company on LinkedIn</a
+                >
               </p>
             </div>
           </div>
@@ -354,15 +352,15 @@ import Layout from '../layouts/Layout.astro'
           <div
             class="w-full grid grid-cols-[1fr_4fr_4fr] gap-(--site-padding-base) mb-(--site-padding-base)"
           >
-            <div></div>
             <!-- Empty space for row labels -->
+            <div></div>
             <div>
               <h4 class="text-secondary uppercase">BMP-2</h4>
               <p class="leading-tight">
                 <span class="uppercase"
                   >Bone Morphogenic<br />
                   Protein</span
-                > via mRNA
+                >
               </p>
             </div>
             <div>
@@ -371,7 +369,7 @@ import Layout from '../layouts/Layout.astro'
                 <span class="uppercase"
                   >Collagen Protein<br />
                   Regeneration</span
-                > via mRNA
+                >
               </p>
             </div>
           </div>
@@ -450,11 +448,11 @@ import Layout from '../layouts/Layout.astro'
           <!-- Mobile Footer Text -->
           <div class="space-y-(--site-padding-base) mt-(--site-padding-lg)">
             <p class="text-sm">
-              Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae praecatur,
-              que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in et, esenet as
-              aut di officiidis cum verrorem vid endaepe rionsed quam, seritatur, sit qui del intios
-              exeri consequi dolupta vent ius expla perrupt aerferro it illae ne plaboreribus
-              eostium et hicia commis sin est.
+              Frame Bio has two therapies already under development: one which targets bone
+              regeneration, and another that aims to strengthen connective tissues by catalyzing
+              collagen production. Both product lines harness the intercellular communications that
+              occur with extra cellular vesicles to deliver therapeutics which trigger the body's
+              natural healing processes.
             </p>
 
             <!-- Bottom Icon/Text for Mobile -->
@@ -471,8 +469,12 @@ import Layout from '../layouts/Layout.astro'
                 ></path></svg
               >
               <p class="text-xs leading-tight">
-                Porta aut auda norunt niis aute volore autectur volupti lectature volorest et ma
-                vent prem volupt dimis molorem curn. e corporibus aut et temporibus magnatur?
+                Want to stay connected to Frame Bio's product development process? <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  class="link text-xs leading-tight">Follow our company on LinkedIn</a
+                >
               </p>
             </div>
           </div>
@@ -498,10 +500,11 @@ import Layout from '../layouts/Layout.astro'
             Contact Frame Bio
           </h2>
           <p class="lsa lsa-slide-right no-repeat">
-            Nestium expliquia dessitiones dolutemquas aut et ut haritate cus vent eatium evenist,
-            natuscium faccum quatia. Rem quatest, eum qui ilit officimus ut faciuri deliquas enieni
-            con rehenda ndunte posaepudam, unda sunt et ut vel molor autempor sapienes derciisquiam
-            volessim asimpora vollique.
+            <strong>Want to help advance a new paradigm for bone and joint health?</strong> We're building
+            next-generation therapies that go beyond managing symptoms—aiming to repair, restore, and
+            truly change the trajectory of skeletal and connective tissue disorders. If you're developing
+            novel therapeutics for skin and bone disorders, or investing in breakthrough ideas, we want
+            to connect with you.
           </p>
 
           <form
@@ -606,10 +609,10 @@ import Layout from '../layouts/Layout.astro'
               class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) mt-(--site-padding-lg)"
             >
               <p class="text-sm text-accent">
-                .Tiamenderitat dolorep eriatioris et moluptam abo. Met rerempo rehenimet aut vit as
-                aut aut officius audania nonsequo te venim alit ent ea santiae. Luptae nonsed unte
-                nis excessum id ute suntur repraes eum et eturiamus estias nis porehen dipsundissit
-                dus as rerum con pos autem il imaxim conestem.
+                By submitting this form, you consent to receive email communications from Frame Bio
+                LLC in response to your inquiry. Please do not include any confidential or
+                proprietary information, as submissions via this form will be treated as
+                non-confidential.
               </p>
               <button type="submit" class="button">Submit Info</button>
             </div>
@@ -621,18 +624,13 @@ import Layout from '../layouts/Layout.astro'
                 class="hidden flex-col md:flex-row items-start gap-6 p-6 bg-success border border-base-100 rounded-lg"
               >
                 <h3 class="uppercase h4 font-bold">Success!</h3>
-                <p>
-                  We've received your information and will get back to you shortly. You've also been
-                  added to our mailing list. We limit our emails to only a few a year, and we never
-                  sell your information to others. If you ever find that these emails no longer fit
-                  your fancy, you can unsubscribe anytime.
-                </p>
+                <p>We've received your information and will get back to you shortly.</p>
               </div>
               <div
                 id="error-message"
                 class="hidden flex-col md:flex-row items-start gap-6 p-6 bg-error border border-base-100 rounded-lg"
               >
-                <h3 class="uppercase h4 font-bold">Yikes!</h3>
+                <h3 class="uppercase h4 font-bold">Error</h3>
                 <p>
                   For some reason, the form did not submit correctly. Please make sure you've
                   completed all the required fields and try to send the information again.
