@@ -16,7 +16,7 @@ import Layout from '../layouts/Layout.astro'
 <Layout>
   <Header />
   <main>
-    <section id="about">
+    <section id="about" class="md:pt-0">
       <div class="wrapper">
         <div
           id="targeted-therapies-grid"
@@ -25,9 +25,7 @@ import Layout from '../layouts/Layout.astro'
           <FrameBioFigure
             class="hidden md:block h-auto max-w-lg mr-auto lsa lsa-slide-left no-repeat"
           />
-          <div
-            class="flex flex-col gap-(--site-padding-base) w-full mt-(--site-padding-lg) lsa lsa-slide-right no-repeat"
-          >
+          <div class="flex flex-col gap-(--site-padding-base) w-full lsa lsa-slide-right no-repeat">
             <h3>Targeted therapies for the</h3>
             <SkinBoneAxisLockup class="max-w-md" />
             <h4 class="text-secondary">Lorem ipsum dolor se moluptat a vellisque aborum etur?</h4>
@@ -146,11 +144,13 @@ import Layout from '../layouts/Layout.astro'
 
     <section id="products">
       <div class="wrapper">
-        <div class="space-y-(--site-padding-base) max-w-4xl">
+        <div class="space-y-(--site-padding-base)">
           <h2 class="text-secondary font-museo-slab-rounded uppercase lsa lsa-slide-left no-repeat">
             Product Development
           </h2>
-          <p class="mb-(--site-padding-lg) lsa lsa-slide-right no-repeat">
+          <p
+            class="mb-(--site-padding-lg) lsa lsa-slide-right no-repeat max-w-(--content-max-width)"
+          >
             Lorem ipsum dolor se moluptat a vellisque aborum etur? Magnatatem aceaquae praecatur,
             que inctem vellabo. Equis et minis nobit derum aperspid quatio. Rore in et, esenet as
             aut di officidis cum verrorem vid endaepe rionsed quam, seritatur, sit qui del intios

@@ -16,14 +16,14 @@ const { title, description, image, imageAlt, numeral } = Astro.props
 ---
 
 <article
-  class="relative lg:w-screen grid lg:grid-cols-[250px_auto_1fr] lg:grid-rows-[auto_1fr] h-auto shadow-[0_0_10px] shadow-accent z-100 bg-primary lsa lsa-slide-right no-repeat"
+  class="relative w-full lg:w-[calc(100vw-var(--site-padding-base))] xl:w-[calc(100vw-var(--site-padding-lg))] grid lg:grid-cols-[250px_auto_1fr] lg:grid-rows-[auto_1fr] h-auto shadow-[0_0_10px] shadow-accent z-100 bg-primary lsa lsa-slide-right no-repeat overflow-hidden"
 >
   <Image
     src={image.src}
     alt={imageAlt}
     width={image.width}
     height={image.height}
-    class="max-h-50 lg:max-h-none h-full"
+    class="w-full max-h-50 lg:max-h-none h-full object-cover"
   />
 
   <div

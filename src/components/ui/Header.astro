@@ -11,70 +11,71 @@ import Phone from '../../assets/images/phone.svg'
 
   <nav
     id="main-nav"
-    class="fixed group top-(--site-padding-3xl) md:top-(--site-padding-base) right-(--site-padding-base) md:right-(--site-padding-lg) py-(--site-padding-base) md:px-(--site-padding-base) z-1000 transition-all duration-300 ease-in-out"
+    class="fixed w-full group top-(--site-padding-base) md:right-(--site-padding-lg) py-(--site-padding-base) md:py-(--site-padding-sm) z-1000 transition-all duration-300 ease-in-out"
     aria-label="Primary navigation"
   >
-    <a href="/">
-      <TitleVertical
-        class="hidden md:block fixed left-(--site-padding-base) top-(--site-padding-6xl) w-16"
-      />
-    </a>
-    <a href="/">
-      <TitleHorizontal
-        id="mobile-logo"
-        class="block md:hidden fixed top-(--site-padding-base) left-(--site-padding-base) right-(--site-padding-base) w-[93.7%] max-w-lg z-1000 transition-transform duration-300 ease-in-out"
-      />
-    </a>
-    <!-- Icons column -->
-    <ul
-      id="nav-icons"
-      class="relative z-150 flex flex-col items-end gap-4 [.nav-open_&]:px-(--site-padding-base) md:[.nav-open_&]:px-0 transition-all duration-300 md:text-secondary text-primary [.nav-open_&]:text-primary"
-    >
-      <li>
-        <button
-          type="button"
-          aria-label="Menu"
-          aria-controls="nav-modal"
-          aria-expanded="false"
-          id="menu-btn"
-          class="relative p-0 m-0 w-6 h-6"
+    <!-- Nav items -->
+    <div class="w-full relative px-(--site-padding-base) flex items-start justify-between gap-4">
+      <!-- Desktop Logo -->
+      <a href="/" class="hidden md:block">
+        <TitleVertical class="fixed left-(--site-padding-base) top-(--site-padding-6xl) w-16" />
+      </a>
+      <!-- Mobile Logo -->
+      <a href="/" class="block md:hidden">
+        <TitleHorizontal id="mobile-logo" />
+      </a>
+
+      <!-- Icons column -->
+      <ul
+        id="nav-icons"
+        class="z-150 flex flex-col items-end gap-4 pt-(--site-padding-sm) md:[.nav-open_&]:px-0 transition-all duration-300 md:text-secondary text-primary [.nav-open_&]:text-primary"
+      >
+        <li>
+          <button
+            type="button"
+            aria-label="Menu"
+            aria-controls="nav-modal"
+            aria-expanded="false"
+            id="menu-btn"
+            class="relative p-0 m-0 w-6 h-6"
+          >
+            <!-- Hamburger lines that stretch to the left when open -->
+            <div class="absolute top-0 right-0 flex flex-col gap-1.5">
+              <span
+                class="hamburger-line block h-0.5 bg-secondary transition-width duration-300 w-6 origin-[right_center]"
+              ></span>
+              <span
+                class="hamburger-line block h-0.5 bg-secondary transition-width duration-300 delay-75 w-6 origin-[right_center]"
+              ></span>
+              <span
+                class="hamburger-line block h-0.5 bg-secondary transition-width duration-300 delay-150 w-6 origin-[right_center]"
+              ></span>
+            </div>
+          </button>
+        </li>
+        <li
+          class="opacity-0 invisible -z-10 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-10 md:visible md:opacity-100 md:z-10 transition-all duration-300"
         >
-          <!-- Hamburger lines that stretch to the left when open -->
-          <div class="absolute top-0 right-0 flex flex-col gap-1.5">
-            <span
-              class="hamburger-line block h-0.5 bg-secondary transition-width duration-300 w-6 origin-[right_center]"
-            ></span>
-            <span
-              class="hamburger-line block h-0.5 bg-secondary transition-width duration-300 delay-75 w-6 origin-[right_center]"
-            ></span>
-            <span
-              class="hamburger-line block h-0.5 bg-secondary transition-width duration-300 delay-150 w-6 origin-[right_center]"
-            ></span>
-          </div>
-        </button>
-      </li>
-      <li
-        class="opacity-0 invisible -z-10 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-10 md:visible md:opacity-100 md:z-10 transition-all duration-300"
-      >
-        <a href="tel:+1234567890" aria-label="Call">
-          <Phone class="size-6" />
-        </a>
-      </li>
-      <li
-        class="opacity-0 invisible -z-10 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-10 md:visible md:opacity-100 md:z-10 transition-all duration-300"
-      >
-        <a href="mailto:info@example.com" aria-label="Email">
-          <Email class="size-6" />
-        </a>
-      </li>
-      <li
-        class="opacity-0 invisible -z-10 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-10 md:visible md:opacity-100 md:z-10 transition-all duration-300"
-      >
-        <a href="#top" aria-label="Back to Top">
-          <ToTop class="size-6" />
-        </a>
-      </li>
-    </ul>
+          <a href="tel:+1234567890" aria-label="Call">
+            <Phone class="size-6" />
+          </a>
+        </li>
+        <li
+          class="opacity-0 invisible -z-10 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-10 md:visible md:opacity-100 md:z-10 transition-all duration-300"
+        >
+          <a href="mailto:info@example.com" aria-label="Email">
+            <Email class="size-6" />
+          </a>
+        </li>
+        <li
+          class="opacity-0 invisible -z-10 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-10 md:visible md:opacity-100 md:z-10 transition-all duration-300"
+        >
+          <a href="#top" aria-label="Back to Top">
+            <ToTop class="size-6" />
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <!-- Modal panel -->
     <div
@@ -82,7 +83,7 @@ import Phone from '../../assets/images/phone.svg'
       role="dialog"
       aria-modal="true"
       aria-label="Site menu"
-      class="absolute top-0 right-0 pointer-events-none opacity-0 translate-y-2 transition-all duration-300 w-xs bg-primary-content text-primary shadow-xl px-(--site-padding-base) pt-(--site-padding-xl) pb-(--site-padding-base) [&.modal-open]:opacity-100 [&.modal-open]:translate-y-0 [&.modal-open]:pointer-events-auto z-100"
+      class="absolute top-0 right-0 pointer-events-none opacity-0 translate-y-2 transition-all duration-300 w-xs bg-primary-content text-primary shadow-xl px-(--site-padding-base) pt-(--site-padding-xl) pb-(--site-padding-md) [&.modal-open]:opacity-100 [&.modal-open]:translate-y-0 [&.modal-open]:pointer-events-auto z-100"
     >
       <!-- Menu links -->
       <ul class="flex flex-col gap-5 font-bold uppercase tracking-tight">
@@ -108,10 +109,10 @@ import Phone from '../../assets/images/phone.svg'
 
 <script>
   const root = document.getElementById('main-nav') as HTMLElement | null
-  const btn = document.getElementById('menu-btn') as HTMLButtonElement | null
+  const hamburger = document.getElementById('menu-btn') as HTMLButtonElement | null
   const icons = document.getElementById('nav-icons') as HTMLElement | null
   const modal = document.getElementById('nav-modal') as HTMLElement | null
-  const mobileLogo = document.getElementById('mobile-logo') as HTMLElement | null
+  const mainNav = document.getElementById('main-nav') as HTMLElement | null
   const stretches = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>
 
   // Scroll state
@@ -123,17 +124,12 @@ import Phone from '../../assets/images/phone.svg'
 
   // Calculate hamburger stretch width based on current viewport
   const calculateStretchWidth = (): number => {
-    if (!btn || !modal) return 16
+    if (!hamburger || !modal) return 16
 
-    const btnRect = btn.getBoundingClientRect()
+    const btnRect = hamburger.getBoundingClientRect()
     const modalRect = modal.getBoundingClientRect()
     const computedStyle = getComputedStyle(modal)
     const leftPadding = parseFloat(computedStyle.paddingLeft)
-
-    // IF on mobile, double the left padding
-    if (window.innerWidth <= 768) {
-      return btnRect.right - (modalRect.left + leftPadding * 2)
-    }
 
     return btnRect.right - (modalRect.left + leftPadding)
   }
@@ -155,7 +151,7 @@ import Phone from '../../assets/images/phone.svg'
   }
 
   const setState = (open: boolean) => {
-    if (!root || !icons || !modal || !btn) return
+    if (!root || !icons || !modal || !hamburger) return
 
     if (open) {
       root.classList.add('nav-open')
@@ -165,13 +161,13 @@ import Phone from '../../assets/images/phone.svg'
       modal.classList.remove('modal-open')
     }
 
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false')
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false')
     updateHamburgerLines(open)
   }
 
   // Handle scroll for mobile logo
   const handleScroll = () => {
-    if (!mobileLogo || !root) return
+    if (!mainNav || !root) return
 
     if (window.innerWidth >= 768) return
 
@@ -187,12 +183,10 @@ import Phone from '../../assets/images/phone.svg'
 
       if (scrollingDown) {
         // Hide logo, move nav to top
-        mobileLogo.style.transform = 'translateY(-130%)'
-        root.style.top = 'var(--site-padding-base)'
+        mainNav.style.transform = 'translateY(-130%)'
       } else {
         // Show logo, restore nav position
-        mobileLogo.style.transform = 'translateY(0)'
-        root.style.top = 'var(--site-padding-3xl)'
+        mainNav.style.transform = 'translateY(0)'
       }
     }
 
@@ -226,6 +220,14 @@ import Phone from '../../assets/images/phone.svg'
     if (target && target.closest('a')) closeNav()
   }
 
+  const handleIconsClick = (e: MouseEvent) => {
+    const target = e.target as HTMLElement
+    // Close menu if any icon link is clicked (but not the hamburger button)
+    if (target && target.closest('a') && !target.closest('#menu-btn')) {
+      closeNav()
+    }
+  }
+
   // Throttle scroll handler for performance
   let scrollTimeout: number | null = null
   const throttledScroll = () => {
@@ -239,11 +241,12 @@ import Phone from '../../assets/images/phone.svg'
   // Init
   const init = () => {
     setState(false)
-    btn?.addEventListener('click', handleMenuButtonClick)
+    hamburger?.addEventListener('click', handleMenuButtonClick)
     window.addEventListener('keydown', handleKeydown)
     window.addEventListener('scroll', throttledScroll, { passive: true })
     document.addEventListener('click', handleDocumentClick)
     modal?.addEventListener('click', handleModalClick)
+    icons?.addEventListener('click', handleIconsClick)
   }
 
   init()
