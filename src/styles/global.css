@@ -215,6 +215,18 @@
   input,
   textarea {
     @apply text-base-content text-base sm:text-lg;
+
+    &::selection {
+      @apply bg-primary text-primary-content;
+    }
+  }
+
+  input {
+    @apply w-full input input-accent;
+  }
+
+  textarea {
+    @apply w-full textarea textarea-accent;
   }
 
   input::placeholder {
