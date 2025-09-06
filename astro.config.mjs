@@ -60,7 +60,6 @@ export default defineConfig({
       filter: (page) => page !== 'https://frame.bio/404/' && page !== 'https://frame.bio/success/',
     }),
   ],
-
   image: {
     layout: 'constrained',
     remotePatterns: [
@@ -70,12 +69,10 @@ export default defineConfig({
       },
     ],
   },
-
   prefetch: {
     prefetchAll: true,
   },
-
   devToolbar: {
-    enabled: true,
+    enabled: false,
   },
 })
