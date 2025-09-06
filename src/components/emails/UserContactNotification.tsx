@@ -99,7 +99,7 @@ const paragraph = {
 }
 
 const button = {
-  backgroundColor: '#1f193e',
+  backgroundColor: '#e05136',
   borderRadius: '25px',
   color: '#ffffff',
   fontSize: '16px',
@@ -110,7 +110,7 @@ const button = {
 }
 
 const link = {
-  color: '#1f193e',
+  color: '#e05136',
   textDecoration: 'none',
 }
 

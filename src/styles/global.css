@@ -199,8 +199,6 @@
     }
   }
 
-
-
   img,
   svg {
     @apply w-full h-auto object-cover;
