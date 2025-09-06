@@ -4,13 +4,13 @@ import { SITE_TITLE } from '../consts'
 import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title={`${SITE_TITLE} - 404`} description="Page not found.">
+<Layout title={`${SITE_TITLE} - Success`} description="Thank you for contacting us.">
   <Header />
   <main
     class="min-h-screen max-w-sm mx-auto flex flex-col items-center justify-center text-center gap-(--site-padding-base)"
   >
-    <h1 class="h2 text-secondary font-museo-slab-rounded uppercase">404</h1>
-    <p>Oops! The page you're looking for doesn't exist. It might have been moved or deleted.</p>
+    <h1 class="h2 text-secondary font-museo-slab-rounded uppercase">Success!</h1>
+    <p>Thank you for contacting us! We've received your message and will get back to you soon.</p>
     <a href="/" class="button reverse">Go back to Home</a>
   </main>
 </Layout>

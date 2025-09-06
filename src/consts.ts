@@ -5,4 +5,4 @@ export const SITE_TITLE =
 export const SITE_DESCRIPTION =
   'Developing next-gen therapies for bone and connective tissue disorders that target root causes using a natural form of intercellular drug delivery.'
 // TODO: Update this when we have a real domain.
-export const SITE_URL = 'http://localhost:4321'
+export const SITE_URL = 'https://frame-bio.netlify.app/'
