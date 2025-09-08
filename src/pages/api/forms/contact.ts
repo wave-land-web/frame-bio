@@ -109,7 +109,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
       )
 
       emailsToSend.push({
-        from: 'Frame Bio <noreply@frame.bio>',
+        from: 'Frame Bio <hello@frame.bio>',
         to: [emailAddress],
         subject: 'Thank you for contacting Frame Bio',
         html: userConfirmationHtml,
@@ -150,7 +150,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
       )
 
       emailsToSend.push({
-        from: 'Frame Bio <noreply@frame.bio>',
+        from: 'Frame Bio <hello@frame.bio>',
         to: ['questions@frame.bio'],
         subject: `New contact form submission from ${firstName} ${lastName}`,
         html: notificationHtml,
