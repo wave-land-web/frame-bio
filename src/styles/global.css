@@ -229,7 +229,8 @@
     @apply w-full textarea textarea-accent;
   }
 
-  input::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     @apply text-info;
   }
 }
