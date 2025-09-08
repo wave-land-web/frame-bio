@@ -52,22 +52,22 @@ import Layout from '../layouts/Layout.astro'
 
           <!-- Treatment Tags - Second Row, Spanning Both Columns -->
           <div
-            class="md:col-span-2 grid grid-cols-2 lg:grid-cols-4 gap-4 lsa lsa-slide-up no-repeat"
+            class="md:col-span-2 grid grid-cols-2 xl:grid-cols-4 gap-4 lsa lsa-slide-up no-repeat"
           >
             <div class="flex items-center gap-2">
-              <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+              <div class="w-3 h-3 flex-shrink-0 bg-secondary rounded-full animate-pulse"></div>
               <p class="h5 font-museo-slab-rounded">Bone</p>
             </div>
             <div class="flex items-center gap-2">
-              <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+              <div class="w-3 h-3 flex-shrink-0 bg-secondary rounded-full animate-pulse"></div>
               <p class="h5 font-museo-slab-rounded">Collagen</p>
             </div>
             <div class="flex items-center gap-2">
-              <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+              <div class="w-3 h-3 flex-shrink-0 bg-secondary rounded-full animate-pulse"></div>
               <p class="h5 font-museo-slab-rounded">Tendons/Joints</p>
             </div>
             <div class="flex items-center gap-2">
-              <div class="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+              <div class="w-3 h-3 flex-shrink-0 bg-secondary rounded-full animate-pulse"></div>
               <p class="h5 font-museo-slab-rounded">Cartilage</p>
             </div>
           </div>
@@ -141,7 +141,7 @@ import Layout from '../layouts/Layout.astro'
       </div>
     </section>
 
-    <section id="products">
+    <section id="products" class="overflow-x-hidden">
       <div class="wrapper">
         <div class="space-y-(--site-padding-base)">
           <h2 class="text-secondary font-museo-slab-rounded uppercase lsa lsa-slide-left no-repeat">
@@ -161,7 +161,7 @@ import Layout from '../layouts/Layout.astro'
             <ProductCard
               title="Collagen Regeneration"
               description={[
-                'Collagen is fiber-like structural protein found in tendons, ligaments, joints, and bones. Many collagen diseases are autoimmune, resulting from an overactive immune system that mistakenly attacks healthy collagen. Current treatments for collagen disorders tend to focus on reducing inflammation and improving mobility. This can be accomplished with medication, surgery, dietary supplements, or a combination of these.',
+                'Collagen is a fiber-like structural protein found in tendons, ligaments, joints, and bones. Many collagen diseases are autoimmune, resulting from an overactive immune system that mistakenly attacks healthy collagen. Current treatments for collagen disorders tend to focus on reducing inflammation and improving mobility. This can be accomplished with medication, surgery, dietary supplements, or a combination of these.',
                 "Frame Bio's research aims to develop targeted collagen therapies that augment natural regenerative processes. This means fewer surgical interventions and a decreased need for medications that affect the entire body. By delivering signaling proteins to the source of skin and bone disease, Frame Bio's novel therapeutics look beyond mere symptom relief in favor of returning tissues to fundamentally healthier states.",
               ]}
               image={CollagenTexture}
@@ -195,7 +195,7 @@ import Layout from '../layouts/Layout.astro'
       </div>
     </section>
 
-    <section id="pipeline" class="bg-primary text-primary-content">
+    <section id="pipeline" class="bg-primary text-primary-content overflow-x-hidden">
       <div class="wrapper xl:pt-100">
         <!-- Header with Title and Figure -->
         <div
