@@ -109,8 +109,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
       )
 
       emailsToSend.push({
-        // TODO: Update with Frame Bio domain + email
-        from: 'Frame Bio <noreply@wavelandweb.com>',
+        from: 'Frame Bio <noreply@frame.bio>',
         to: [emailAddress],
         subject: 'Thank you for contacting Frame Bio',
         html: userConfirmationHtml,
@@ -151,9 +150,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
       )
 
       emailsToSend.push({
-        // TODO: Update with Frame Bio domain + email
-        from: 'Frame Bio <noreply@wavelandweb.com>',
-        to: ['josh@wavelandweb.com'],
+        from: 'Frame Bio <noreply@frame.bio>',
+        to: ['questions@frame.bio'],
         subject: `New contact form submission from ${firstName} ${lastName}`,
         html: notificationHtml,
         text: notificationText,
