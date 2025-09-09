@@ -201,7 +201,7 @@
 
   img,
   svg {
-    @apply w-full h-auto object-cover;
+    @apply max-w-full h-auto object-cover;
   }
 
   em {
