@@ -1,0 +1,174 @@
+<form
+  id="contact-form"
+  name="contact"
+  class="space-y-(--site-padding-sm) lsa no-repeat"
+  method="POST"
+  action="/success"
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+>
+  <!-- Hidden form-name input required by Netlify -->
+  <input type="hidden" name="form-name" value="contact" />
+
+  <!-- Honeypot field - hidden from users, catches bots -->
+  <div style="display: none;">
+    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+  </div>
+
+  <!-- First and Last Name -->
+  <fieldset class="grid grid-cols-2 gap-(--site-padding-sm)">
+    <legend class="sr-only">Personal Information</legend>
+    <label class="sr-only" for="firstName">First Name (required)</label>
+    <input
+      type="text"
+      name="firstName"
+      id="firstName"
+      placeholder="First Name*"
+      required
+      aria-required="true"
+    />
+    <label class="sr-only" for="lastName">Last Name (required)</label>
+    <input
+      type="text"
+      name="lastName"
+      id="lastName"
+      placeholder="Last Name*"
+      required
+      aria-required="true"
+    />
+  </fieldset>
+
+  <!-- Business Name -->
+  <fieldset>
+    <legend class="sr-only">Business Name</legend>
+    <label class="sr-only" for="businessName">Business Name (required)</label>
+    <input
+      type="text"
+      name="businessName"
+      id="businessName"
+      placeholder="Business Name*"
+      required
+      aria-required="true"
+    />
+  </fieldset>
+
+  <fieldset>
+    <legend class="sr-only">Job Title</legend>
+    <label class="sr-only" for="jobTitle">Job Title (required)</label>
+    <input
+      type="text"
+      name="jobTitle"
+      id="jobTitle"
+      placeholder="Job Title*"
+      required
+      aria-required="true"
+    />
+  </fieldset>
+
+  <!-- Email + Phone -->
+  <fieldset class="grid grid-cols-2 gap-(--site-padding-sm)">
+    <legend class="sr-only">Contact Information</legend>
+    <label class="sr-only" for="email">Email Address (required)</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Email*"
+      required
+      aria-required="true"
+      aria-describedby="email-help"
+    />
+    <label class="sr-only" for="phone">Phone Number (required)</label>
+    <input type="tel" name="phone" id="phone" placeholder="Phone*" required aria-required="true" />
+  </fieldset>
+
+  <!-- Message textarea -->
+  <fieldset>
+    <legend class="sr-only">Message (optional)</legend>
+    <textarea
+      name="message"
+      id="message"
+      rows="10"
+      placeholder="Message (optional)"
+      aria-required="false"></textarea>
+  </fieldset>
+
+  <div
+    class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) mt-(--site-padding-lg)"
+  >
+    <p class="text-sm text-accent">
+      By submitting this form, you consent to receive email communications from Frame Bio LLC in
+      response to your inquiry. Please do not include any confidential or proprietary information,
+      as submissions via this form will be treated as non-confidential.
+    </p>
+    <button type="submit" class="button disabled:bg-neutral">Submit Info</button>
+  </div>
+</form>
+
+<!-- Enhanced form submission handler -->
+<script>
+  const contactForm = document.getElementById('contact-form')
+
+  async function submitContactForm(e: Event) {
+    e.preventDefault()
+
+    const form = e.target as HTMLFormElement
+    if (!form) return
+
+    const formData = new FormData(form)
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement
+
+    // Disable submit button and show loading state
+    if (submitButton) {
+      submitButton.disabled = true
+      submitButton.textContent = 'Submitting...'
+    }
+
+    try {
+      // First, submit to your Sanity backend
+      const sanityResponse = await fetch('/api/forms/contact', {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (!sanityResponse.ok) {
+        throw new Error('Sanity submission failed')
+      }
+
+      // Convert FormData to URLSearchParams for Netlify
+      const urlEncodedData = new URLSearchParams()
+      for (const [key, value] of formData.entries()) {
+        if (typeof value === 'string') {
+          urlEncodedData.append(key, value)
+        }
+      }
+
+      // Then submit to Netlify for notifications
+      const netlifyResponse = await fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: urlEncodedData.toString(),
+      })
+
+      if (!netlifyResponse.ok) {
+        throw new Error('Netlify submission failed')
+      }
+
+      // Success - redirect to success page
+      window.location.href = '/success'
+    } catch (error) {
+      console.error('Form submission error:', error)
+      alert('There was an error submitting your form. Please try again.')
+
+      // Re-enable submit button
+      if (submitButton) {
+        submitButton.disabled = false
+        submitButton.textContent = 'Submit Info'
+      }
+    }
+  }
+
+  contactForm?.addEventListener('submit', submitContactForm)
+</script>

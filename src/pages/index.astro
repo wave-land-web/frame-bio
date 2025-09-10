@@ -9,6 +9,7 @@ import FrameBioPipelineGrid from '../assets/images/frame-bio_pipeline-grid-secti
 import SkinBoneAxisLockup from '../assets/images/frame-bio_skin-bone-axis-lockup.svg'
 import FrameBioVerticalPipeline from '../assets/images/frame-bio_vertical-pipeline-grid.svg'
 import highResImage from '../assets/images/high-res-exosome-image.png'
+import Contact from '../components/forms/Contact.astro'
 import Header from '../components/ui/Header.astro'
 import ProductCard from '../components/ui/ProductCard.astro'
 import Layout from '../layouts/Layout.astro'
@@ -493,116 +494,7 @@ import Layout from '../layouts/Layout.astro'
             to connect with you.
           </p>
 
-          <form
-            id="contact-form"
-            class="space-y-(--site-padding-sm) lsa no-repeat"
-            method="POST"
-            action="/api/forms/contact"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <!-- Honeypot field - hidden from users, catches bots -->
-            <div style="display: none;">
-              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-            </div>
-
-            <!-- First and Last Name -->
-            <fieldset class="grid grid-cols-2 gap-(--site-padding-sm)">
-              <legend class="sr-only">Personal Information</legend>
-              <label class="sr-only" for="firstName">First Name (required)</label>
-              <input
-                type="text"
-                name="firstName"
-                id="firstName"
-                placeholder="First Name*"
-                required
-                aria-required="true"
-              />
-              <label class="sr-only" for="lastName">Last Name (required)</label>
-              <input
-                type="text"
-                name="lastName"
-                id="lastName"
-                placeholder="Last Name*"
-                required
-                aria-required="true"
-              />
-            </fieldset>
-
-            <!-- Business Name -->
-            <fieldset>
-              <legend class="sr-only">Business Name</legend>
-              <label class="sr-only" for="businessName">Business Name (required)</label>
-              <input
-                type="text"
-                name="businessName"
-                id="businessName"
-                placeholder="Business Name*"
-                required
-                aria-required="true"
-              />
-            </fieldset>
-
-            <fieldset>
-              <legend class="sr-only">Job Title</legend>
-              <label class="sr-only" for="jobTitle">Job Title (required)</label>
-              <input
-                type="text"
-                name="jobTitle"
-                id="jobTitle"
-                placeholder="Job Title*"
-                required
-                aria-required="true"
-              />
-            </fieldset>
-
-            <!-- Email + Phone -->
-            <fieldset class="grid grid-cols-2 gap-(--site-padding-sm)">
-              <legend class="sr-only">Contact Information</legend>
-              <label class="sr-only" for="email">Email Address (required)</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email*"
-                required
-                aria-required="true"
-                aria-describedby="email-help"
-              />
-              <label class="sr-only" for="phone">Phone Number (required)</label>
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                placeholder="Phone*"
-                required
-                aria-required="true"
-              />
-            </fieldset>
-
-            <!-- Message textarea -->
-            <fieldset>
-              <legend class="sr-only">Message (optional)</legend>
-              <textarea
-                name="message"
-                id="message"
-                rows="10"
-                placeholder="Message (optional)"
-                aria-required="false"></textarea>
-            </fieldset>
-
-            <div
-              class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) mt-(--site-padding-lg)"
-            >
-              <p class="text-sm text-accent">
-                By submitting this form, you consent to receive email communications from Frame Bio
-                LLC in response to your inquiry. Please do not include any confidential or
-                proprietary information, as submissions via this form will be treated as
-                non-confidential.
-              </p>
-              <button type="submit" class="button">Submit Info</button>
-            </div>
-          </form>
+          <Contact />
         </div>
       </div>
     </section>
