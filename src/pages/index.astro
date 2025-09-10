@@ -31,7 +31,7 @@ import Layout from '../layouts/Layout.astro'
           <div class="flex flex-col gap-(--site-padding-base) w-full lsa lsa-slide-right no-repeat">
             <h3 class="text-[clamp(1rem,7.25vw,2.25rem)]">Targeted therapies for the</h3>
             <SkinBoneAxisLockup class="max-w-md" />
-            <h4 class="text-secondary">
+            <h4 class="text-3xl text-secondary mt-8">
               A Novel Paradigm for Relieving Structural Diseases & Disorders
             </h4>
             <div class="space-y-(--site-padding-sm)">
@@ -83,9 +83,7 @@ import Layout from '../layouts/Layout.astro'
 
     <section id="our-tech">
       <div class="wrapper">
-        <div
-          class="grid lg:grid-cols-[1fr_500px] gap-(--site-padding-xl) justify-items-center items-center"
-        >
+        <div class="grid lg:grid-cols-2 gap-(--site-padding-xl) justify-items-center items-center">
           <!-- Left Column: Text Content -->
           <div class="space-y-(--site-padding-base) lsa lsa-slide-left no-repeat">
             <h2 class="text-secondary font-museo-slab-rounded uppercase">CORE TECHNOLOGY</h2>
@@ -113,41 +111,29 @@ import Layout from '../layouts/Layout.astro'
           </div>
 
           <!-- Right Column: Exosome Image with Static Annotations -->
-          <div
-            class="relative w-full h-auto max-w-[500px] max-h-[500px] mx-auto text-accent lsa lsa-slide-right no-repeat"
-          >
+          <figure class="max-w-[500px] space-y-(--site-padding-sm) lsa lsa-slide-right no-repeat">
             <Image
               src={highResImage}
               alt="High resolution exosome structure"
-              class="drop-shadow-2xl relative"
+              class="drop-shadow-2xl"
               width={highResImage.width}
               height={highResImage.height}
             />
 
-            <!-- First annotation - center left area -->
-            <div class="absolute top-full left-0 w-[180px]">
-              <p class="text-xs leading-tight">
+            <figcaption class="ml-auto w-1/2">
+              <p class="caption">
                 An extracellular vesicle is a nanoscale, membrane-bound particle (about 30-1000
                 nanometers in diameter) that cells naturally release for intercellular
                 communication. They carry proteins, lipids, and nucleic acids to transmit signals
                 and regulate the behavior of other cells.
               </p>
-              <!-- Horizontal line with circle - rotate with CSS transform as needed -->
-              <svg
-                class="absolute -top-20 left-1/2 -rotate-60 w-[150px] h-[20px]"
-                viewBox="0 0 150 20"
-              >
-                <line x1="0" y1="10" x2="140" y2="10" stroke="var(--color-accent)" stroke-width="2"
-                ></line>
-                <circle cx="140" cy="10" r="3" fill="var(--color-accent)"></circle>
-              </svg>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section id="products" class="overflow-x-hidden mt-(--site-padding-2xl)">
+    <section id="products" class="overflow-x-hidden">
       <div class="wrapper">
         <div class="space-y-(--site-padding-base)">
           <h2 class="text-secondary font-museo-slab-rounded uppercase lsa lsa-slide-left no-repeat">
@@ -307,7 +293,7 @@ import Layout from '../layouts/Layout.astro'
 
           <!-- Caption -->
           <div class="space-y-(--site-padding-base) mt-(--site-padding-lg)">
-            <p class="text-sm">
+            <p>
               Frame Bio has two therapies already under development: one which targets bone
               regeneration, and another that aims to strengthen connective tissues by catalyzing
               collagen production. Both product lines harness the intercellular communications that
@@ -328,12 +314,12 @@ import Layout from '../layouts/Layout.astro'
                   d="M401 0q-83 0-156-31.5t-127.5-86Q63-172 31.5-245T0-400q0-83 31.5-156t86-127.5Q172-738 245-769.5T401-801q10 0 19.5.5T440-799v80q-10-1-19.5-1.5T401-721q-134 0-227.5 93.5T80-400q0 133 93.5 226.5T401-80q133 0 226.5-93.5T721-400h80q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T401 0Zm131-212L360-384v-216h80v184l148 148-56 56Zm342-268q-23-142-120-246.5T520-866v-82q171 37 290.5 165T955-480h-81Zm-163 0q-19-75-69.5-132T520-698v-85q103 32 177 113.5T793-480h-82Z"
                 ></path></svg
               >
-              <p class="text-xs leading-tight">
+              <p class="caption">
                 Want to stay connected to Frame Bio's product development process? <a
                   href="https://www.linkedin.com/company/frame-bio/"
                   target="_blank"
                   rel="noopener"
-                  class="link text-xs leading-tight">Follow our company on LinkedIn</a
+                  class="link caption">Follow our company on LinkedIn</a
                 >
               </p>
             </div>
@@ -455,12 +441,12 @@ import Layout from '../layouts/Layout.astro'
                   d="M401 0q-83 0-156-31.5t-127.5-86Q63-172 31.5-245T0-400q0-83 31.5-156t86-127.5Q172-738 245-769.5T401-801q10 0 19.5.5T440-799v80q-10-1-19.5-1.5T401-721q-134 0-227.5 93.5T80-400q0 133 93.5 226.5T401-80q133 0 226.5-93.5T721-400h80q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T401 0Zm131-212L360-384v-216h80v184l148 148-56 56Zm342-268q-23-142-120-246.5T520-866v-82q171 37 290.5 165T955-480h-81Zm-163 0q-19-75-69.5-132T520-698v-85q103 32 177 113.5T793-480h-82Z"
                 ></path></svg
               >
-              <p class="text-sm text-accent leading-tight">
+              <p class="caption">
                 Want to stay connected to Frame Bio's product development process? <a
                   href="https://www.linkedin.com/company/frame-bio/"
                   target="_blank"
                   rel="noopener"
-                  class="link text-sm leading-tight">Follow our company on LinkedIn</a
+                  class="link caption">Follow our company on LinkedIn</a
                 >
               </p>
             </div>

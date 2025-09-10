@@ -199,6 +199,10 @@
     }
   }
 
+  .caption {
+    @apply text-sm lg:text-base leading-tight text-accent;
+  }
+
   img,
   svg {
     @apply max-w-full h-auto object-cover;
