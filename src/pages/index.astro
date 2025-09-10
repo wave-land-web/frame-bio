@@ -7,6 +7,7 @@ import FrameBioFigure from '../assets/images/frame-bio_figure-leaning-stretch.sv
 import PillsTexture from '../assets/images/frame-bio_pills-texture.svg'
 import FrameBioPipelineGrid from '../assets/images/frame-bio_pipeline-grid-section.svg'
 import SkinBoneAxisLockup from '../assets/images/frame-bio_skin-bone-axis-lockup.svg'
+import FrameBioVerticalPipeline from '../assets/images/frame-bio_vertical-pipeline-grid.svg'
 import highResImage from '../assets/images/high-res-exosome-image.png'
 import Header from '../components/ui/Header.astro'
 import ProductCard from '../components/ui/ProductCard.astro'
@@ -151,9 +152,7 @@ import Layout from '../layouts/Layout.astro'
           <h2 class="text-secondary font-museo-slab-rounded uppercase lsa lsa-slide-left no-repeat">
             Product Development
           </h2>
-          <p
-            class="mb-(--site-padding-lg) lsa lsa-slide-right no-repeat max-w-(--content-max-width)"
-          >
+          <p class="mb-(--site-padding-lg) lsa lsa-slide-right no-repeat">
             Currently, Frame Bio is researching three unique product lines, each addressing
             different components of the skin-bone axis, with the aim of improving quality of life
             for millions of people suffering from inflammation and discomfort tied to bone disease
@@ -223,6 +222,122 @@ import Layout from '../layouts/Layout.astro'
         </div>
 
         <!-- Pipeline Charts -->
+
+        <!-- Mobile -->
+        <div
+          class="relative mx-auto flex flex-col items-center xl:hidden gap-(--site-padding-lg) lsa lsa-slide-up no-repeat h-full max-w-2xl"
+        >
+          <!-- Column Headers -->
+          <div
+            class="w-full grid grid-cols-[1fr_4fr_4fr] gap-(--site-padding-base) mb-(--site-padding-base)"
+          >
+            <!-- Empty space for row labels -->
+            <div class="w-full"></div>
+            <div>
+              <h4 class="text-secondary uppercase">BMP-2</h4>
+              <p class="leading-tight">
+                <span class="uppercase"
+                  >Bone Morphogenic<br />
+                  Protein</span
+                >
+              </p>
+            </div>
+            <div>
+              <h4 class="text-secondary uppercase">Collagen 1</h4>
+              <p class="leading-tight">
+                <span class="uppercase"
+                  >Collagen Protein<br />
+                  Regeneration</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- Pipeline Grid Container -->
+          <div class="w-full grid grid-cols-[1fr_4fr_4fr] gap-(--site-padding-base) relative">
+            <!-- Left Column: Row Labels -->
+            <div class="flex flex-col items-center justify-around h-full">
+              <h4 class="[writing-mode:vertical-rl] text-accent uppercase">Discovery</h4>
+              <h4 class="[writing-mode:vertical-rl] text-accent uppercase">Pre-Clinical</h4>
+              <h4 class="[writing-mode:vertical-rl] text-accent uppercase">IND-Enabling</h4>
+            </div>
+
+            <!-- Pipeline Grid Background -->
+            <div class="col-span-2 relative">
+              <Image
+                src={FrameBioVerticalPipeline}
+                alt="Pipeline Grid"
+                class="opacity-10 w-full h-full object-cover"
+              />
+
+              <!-- BMP-2 Progress Bar -->
+              <div class="absolute top-0 left-1/4 h-1/3 flex justify-center items-start">
+                <div class="relative h-full w-6 flex justify-center">
+                  <!-- Circle -->
+                  <div
+                    class="absolute top-0 w-5 h-5 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full z-1"
+                  >
+                  </div>
+                  <!-- Line -->
+                  <div
+                    class="absolute top-2.5 left-1/2 -translate-x-1/2 h-[200%] w-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
+                  >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Collagen Progress Bar -->
+              <div class="absolute top-0 right-1/4 h-1/3 flex justify-center items-start">
+                <div class="relative h-full w-6 flex justify-center">
+                  <!-- Circle -->
+                  <div
+                    class="absolute top-0 w-5 h-5 bg-white rounded-full z-1 shadow-[0_0_0_6px_var(--color-base-200)]"
+                  >
+                  </div>
+                  <!-- Line -->
+                  <div
+                    class="absolute top-2.5 left-1/2 -translate-x-1/2 h-full w-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
+                  >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Caption -->
+          <div class="space-y-(--site-padding-base) mt-(--site-padding-lg)">
+            <p class="text-sm">
+              Frame Bio has two therapies already under development: one which targets bone
+              regeneration, and another that aims to strengthen connective tissues by catalyzing
+              collagen production. Both product lines harness the intercellular communications that
+              occur with extra cellular vesicles to deliver therapeutics which trigger the body's
+              natural healing processes.
+            </p>
+
+            <!-- Bottom Icon/Text for Mobile -->
+            <div class="flex items-center gap-4 text-accent">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                width="24px"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="size-6 flex-shrink-0"
+                ><path
+                  d="M401 0q-83 0-156-31.5t-127.5-86Q63-172 31.5-245T0-400q0-83 31.5-156t86-127.5Q172-738 245-769.5T401-801q10 0 19.5.5T440-799v80q-10-1-19.5-1.5T401-721q-134 0-227.5 93.5T80-400q0 133 93.5 226.5T401-80q133 0 226.5-93.5T721-400h80q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T401 0Zm131-212L360-384v-216h80v184l148 148-56 56Zm342-268q-23-142-120-246.5T520-866v-82q171 37 290.5 165T955-480h-81Zm-163 0q-19-75-69.5-132T520-698v-85q103 32 177 113.5T793-480h-82Z"
+                ></path></svg
+              >
+              <p class="text-xs leading-tight">
+                Want to stay connected to Frame Bio's product development process? <a
+                  href="https://www.linkedin.com/company/frame-bio/"
+                  target="_blank"
+                  rel="noopener"
+                  class="link text-xs leading-tight">Follow our company on LinkedIn</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
 
         <!-- Desktop -->
         <div class="hidden xl:block space-y-(--site-padding-lg) lsa lsa-slide-up no-repeat">
@@ -345,142 +460,6 @@ import Layout from '../layouts/Layout.astro'
                   target="_blank"
                   rel="noopener"
                   class="link text-sm leading-tight">Follow our company on LinkedIn</a
-                >
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile -->
-        <div
-          class="mx-auto flex flex-col items-center xl:hidden gap-(--site-padding-lg) lsa lsa-slide-up no-repeat"
-        >
-          <!-- Column Headers -->
-          <div
-            class="w-full grid grid-cols-[1fr_4fr_4fr] gap-(--site-padding-base) mb-(--site-padding-base)"
-          >
-            <!-- Empty space for row labels -->
-            <div></div>
-            <div>
-              <h4 class="text-secondary uppercase">BMP-2</h4>
-              <p class="leading-tight">
-                <span class="uppercase"
-                  >Bone Morphogenic<br />
-                  Protein</span
-                >
-              </p>
-            </div>
-            <div>
-              <h4 class="text-secondary uppercase">Collagen 1</h4>
-              <p class="leading-tight">
-                <span class="uppercase"
-                  >Collagen Protein<br />
-                  Regeneration</span
-                >
-              </p>
-            </div>
-          </div>
-
-          <!-- Discovery Row -->
-          <div class="grid grid-cols-[1fr_4fr_4fr] justify-items-center items-center">
-            <h4 class="[writing-mode:vertical-rl] mr-(--site-padding-base) text-accent uppercase">
-              Discovery
-            </h4>
-            <div class="relative">
-              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-              <!-- BMP-2 Progress Bar for Discovery -->
-              <div class="absolute inset-0 flex justify-center items-center">
-                <div class="relative h-full w-6 flex justify-center">
-                  <!-- Circle -->
-                  <div
-                    class="absolute top-0 w-5 h-5 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full z-1"
-                  >
-                  </div>
-                  <!-- Line -->
-                  <div
-                    class="absolute top-2.5 left-1/2 -translate-x-1/2 w-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
-                    style="height: 200%"
-                  >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="relative">
-              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-              <!-- Collagen Progress Bar for Discovery -->
-              <div class="absolute inset-0 flex justify-center items-center">
-                <div class="relative h-full w-6 flex justify-center">
-                  <!-- Circle -->
-                  <div
-                    class="absolute top-0 w-5 h-5 bg-white rounded-full z-1 shadow-[0_0_0_6px_var(--color-base-200)]"
-                  >
-                  </div>
-                  <!-- Line -->
-                  <div
-                    class="absolute top-2.5 left-1/2 -translate-x-1/2 w-1 bg-white shadow-[0_0_0_6px_var(--color-base-200)] rounded-full"
-                    style="height: 100%"
-                  >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Pre-Clinical Row -->
-          <div class="grid grid-cols-[1fr_4fr_4fr] justify-items-center items-center">
-            <h4 class="[writing-mode:vertical-rl] mr-(--site-padding-base) text-accent uppercase">
-              Pre-Clinical
-            </h4>
-            <div class="relative">
-              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-            </div>
-            <div class="relative">
-              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-            </div>
-          </div>
-
-          <!-- IND-Enabling Row -->
-          <div class="grid grid-cols-[1fr_4fr_4fr] justify-items-center items-center">
-            <h4 class="[writing-mode:vertical-rl] mr-(--site-padding-base) text-accent uppercase">
-              IND-Enabling
-            </h4>
-            <div class="relative">
-              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-            </div>
-            <div class="relative">
-              <Image src={FrameBioPipelineGrid} alt="Pipeline Grid" class="opacity-30" />
-            </div>
-          </div>
-
-          <!-- Mobile Footer Text -->
-          <div class="space-y-(--site-padding-base) mt-(--site-padding-lg)">
-            <p class="text-sm">
-              Frame Bio has two therapies already under development: one which targets bone
-              regeneration, and another that aims to strengthen connective tissues by catalyzing
-              collagen production. Both product lines harness the intercellular communications that
-              occur with extra cellular vesicles to deliver therapeutics which trigger the body's
-              natural healing processes.
-            </p>
-
-            <!-- Bottom Icon/Text for Mobile -->
-            <div class="flex items-center gap-4 text-accent">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                width="24px"
-                viewBox="0 -960 960 960"
-                fill="currentColor"
-                class="size-6 flex-shrink-0"
-                ><path
-                  d="M401 0q-83 0-156-31.5t-127.5-86Q63-172 31.5-245T0-400q0-83 31.5-156t86-127.5Q172-738 245-769.5T401-801q10 0 19.5.5T440-799v80q-10-1-19.5-1.5T401-721q-134 0-227.5 93.5T80-400q0 133 93.5 226.5T401-80q133 0 226.5-93.5T721-400h80q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T401 0Zm131-212L360-384v-216h80v184l148 148-56 56Zm342-268q-23-142-120-246.5T520-866v-82q171 37 290.5 165T955-480h-81Zm-163 0q-19-75-69.5-132T520-698v-85q103 32 177 113.5T793-480h-82Z"
-                ></path></svg
-              >
-              <p class="text-xs leading-tight">
-                Want to stay connected to Frame Bio's product development process? <a
-                  href="https://www.linkedin.com/company/frame-bio/"
-                  target="_blank"
-                  rel="noopener"
-                  class="link text-xs leading-tight">Follow our company on LinkedIn</a
                 >
               </p>
             </div>
