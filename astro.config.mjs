@@ -30,14 +30,6 @@ export default defineConfig({
         context: 'server',
         access: 'secret',
       }),
-      RESEND_API_KEY: envField.string({
-        context: 'server',
-        access: 'secret',
-      }),
-      RESEND_AUDIENCE_ID: envField.string({
-        context: 'server',
-        access: 'secret',
-      }),
     },
     validateSecrets: true,
   },

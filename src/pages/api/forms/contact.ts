@@ -1,8 +1,4 @@
-import { render } from '@react-email/render'
 import type { APIRoute } from 'astro'
-import AdminContactNotification from '../../../components/emails/AdminContactNotification'
-import UserContactNotification from '../../../components/emails/UserContactNotification'
-import { resend } from '../../../lib/resend'
 import { sanityClient } from '../../../sanity/lib/client'
 import {
   createContactFormSubmission,
@@ -84,100 +80,10 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     // Create contact form submission in Sanity
     const submission = await createContactFormSubmission(client, contactData)
 
-    // Prepare emails to send using batch API
-    const emailsToSend = []
-
-    // Send user confirmation email
-    try {
-      console.log('Preparing user confirmation email for contact form submission...')
-
-      // Generate HTML version of user confirmation
-      const userConfirmationHtml = await render(
-        UserContactNotification({
-          firstName,
-        })
-      )
-
-      // Generate text version of user confirmation
-      const userConfirmationText = await render(
-        UserContactNotification({
-          firstName,
-        }),
-        {
-          plainText: true,
-        }
-      )
-
-      emailsToSend.push({
-        from: 'Frame Bio <hello@frame.bio>',
-        to: [emailAddress],
-        subject: 'Thank you for contacting Frame Bio',
-        html: userConfirmationHtml,
-        text: userConfirmationText,
-      })
-    } catch (userEmailError) {
-      console.error('Failed to prepare user confirmation email:', userEmailError)
-      // Continue execution - admin notification can still be sent
-    }
-
-    // Send admin notification email
-    try {
-      console.log('Preparing admin notification for contact form submission...')
-
-      // Generate HTML version of admin notification
-      const notificationHtml = await render(
-        AdminContactNotification({
-          firstName,
-          lastName,
-          email: emailAddress,
-          phone: phoneNumber,
-          message: messageBody,
-        })
-      )
-
-      // Generate text version of admin notification
-      const notificationText = await render(
-        AdminContactNotification({
-          firstName,
-          lastName,
-          email: emailAddress,
-          phone: phoneNumber,
-          message: messageBody,
-        }),
-        {
-          plainText: true,
-        }
-      )
-
-      emailsToSend.push({
-        from: 'Frame Bio <hello@frame.bio>',
-        to: ['questions@frame.bio'],
-        subject: `New contact form submission from ${firstName} ${lastName}`,
-        html: notificationHtml,
-        text: notificationText,
-      })
-    } catch (adminEmailError) {
-      console.error('Failed to prepare admin notification email:', adminEmailError)
-      // Continue execution - user confirmation can still be sent
-    }
-
-    // Send all emails in batch
-    if (emailsToSend.length > 0) {
-      try {
-        const { data: batchData, error: batchError } = await resend.batch.send(emailsToSend)
-
-        if (batchError) {
-          console.error('Error sending batch emails:', batchError)
-        } else {
-          console.log(`Successfully sent ${emailsToSend.length} emails:`, batchData)
-        }
-      } catch (emailError) {
-        console.error('Email send error:', emailError)
-        // Continue execution - form submission succeeded even if email failed
-      }
-    }
+    console.log('✅ Contact form submission saved to Sanity:', submission._id)
 
     // Redirect to success page on successful submission
+    // Netlify will handle email notifications automatically
     return redirect('/success', 302)
   } catch (error) {
     console.error('Contact form submission error:', error)
