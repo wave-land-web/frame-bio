@@ -37,6 +37,7 @@ const {
     aria-label="Show References"
     id={buttonId}
     class={`${modalPosition === 'left' ? 'mr-auto' : modalPosition === 'right' ? 'ml-auto' : 'mx-auto'} group flex items-center caption text-accent/50 hover:text-secondary transition-colors duration-200`}
+    data-umami-event={`Opened References Modal: ${modalId}`}
     onclick={`document.getElementById('${modalId}').showModal()`}
   >
     <!-- Vertical lines (static) -->
@@ -68,6 +69,7 @@ const {
                 href={ref.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-umami-event={`Clicked Reference: ${ref.title}`}
                 class="link text-sm inline text-primary hover:text-secondary"
               >
                 {ref.title || ref.url}

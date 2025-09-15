@@ -67,21 +67,25 @@ import Phone from '../../assets/images/phone.svg'
         <li
           class="opacity-0 invisible -z-1 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-100 md:visible md:opacity-100 md:z-100 transition-all duration-300"
         >
-          <a href="tel:+15054163400" aria-label="Call">
+          <a href="tel:+15054163400" aria-label="Call" data-umami-event="Clicked Phone Number">
             <Phone class="size-6" />
           </a>
         </li>
         <li
           class="opacity-0 invisible -z-1 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-100 md:visible md:opacity-100 md:z-100 transition-all duration-300"
         >
-          <a href="mailto:questions@frame.bio" aria-label="Email">
+          <a
+            href="mailto:questions@frame.bio"
+            aria-label="Email"
+            data-umami-event='Clicked "questions@frame.bio" Email Address'
+          >
             <Email class="size-6" />
           </a>
         </li>
         <li
           class="opacity-0 invisible -z-1 group-[&.nav-open]:visible group-[&.nav-open]:opacity-100 group-[&.nav-open]:z-100 md:visible md:opacity-100 md:z-100 transition-all duration-300"
         >
-          <a href="#top" aria-label="Back to Top">
+          <a href="#top" aria-label="Back to Top" data-umami-event='Clicked "Back to Top"'>
             <ToTop class="size-6" />
           </a>
         </li>
@@ -99,19 +103,19 @@ import Phone from '../../assets/images/phone.svg'
       <!-- Menu links -->
       <ul class="flex flex-col gap-5 font-bold uppercase tracking-tight">
         <li>
-          <a href="#about">About</a>
+          <a href="#about" data-umami-event="Navigated to About Section">About</a>
         </li>
         <li>
-          <a href="#our-tech">Our Tech</a>
+          <a href="#our-tech" data-umami-event="Navigated to Our Tech Section">Our Tech</a>
         </li>
         <li>
-          <a href="#products">Products</a>
+          <a href="#products" data-umami-event="Navigated to Products Section">Products</a>
         </li>
         <li>
-          <a href="#pipeline">Pipeline</a>
+          <a href="#pipeline" data-umami-event="Navigated to Pipeline Section">Pipeline</a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a href="#contact" data-umami-event="Navigated to Contact Section">Contact</a>
         </li>
       </ul>
     </div>
