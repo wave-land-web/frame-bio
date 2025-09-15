@@ -3,6 +3,8 @@ import { Image } from 'astro:assets'
 import NumeralOne from '../../assets/images/frame-bio_numeral-1.svg'
 import NumeralTwo from '../../assets/images/frame-bio_numeral-2.svg'
 import NumeralThree from '../../assets/images/frame-bio_numeral-3.svg'
+import type { ModalProps } from './References.astro'
+import References from './References.astro'
 
 export interface Props {
   title: string
@@ -10,9 +12,10 @@ export interface Props {
   image: ImageMetadata
   imageAlt: string
   numeral?: number
+  modalProps?: ModalProps
 }
 
-const { title, description, image, imageAlt, numeral } = Astro.props
+const { title, description, image, imageAlt, numeral, modalProps } = Astro.props
 ---
 
 <article
@@ -29,17 +32,49 @@ const { title, description, image, imageAlt, numeral } = Astro.props
   <div
     class="flex gap-(--site-padding-base) lg:gap-(--site-padding-base) px-(--site-padding-base) py-(--site-padding-md)"
   >
-    {numeral === 1 && <NumeralOne class="size-12 md:size-16 lg:size-24 shrink-0" />}
-    {numeral === 2 && <NumeralTwo class="size-12 md:size-16 lg:size-24 shrink-0" />}
-    {numeral === 3 && <NumeralThree class="size-12 md:size-16 lg:size-24 shrink-0" />}
+    <div class="flex flex-col justify-between gap-(--site-padding-sm) h-full">
+      {numeral === 1 && <NumeralOne class="size-12 md:size-16 lg:size-24 shrink-0" />}
+      {numeral === 2 && <NumeralTwo class="size-12 md:size-16 lg:size-24 shrink-0" />}
+      {numeral === 3 && <NumeralThree class="size-12 md:size-16 lg:size-24 shrink-0" />}
+
+      {
+        modalProps && (
+          <div class="hidden lg:block">
+            <References
+              buttonId={modalProps.buttonId}
+              modalId={modalProps.modalId}
+              modalPosition={modalProps.modalPosition || 'left'}
+              references={modalProps.references}
+              buttonText={modalProps.buttonText}
+              hasBorder={modalProps.hasBorder}
+            />
+          </div>
+        )
+      }
+    </div>
 
     <div class="flex flex-col gap-(--site-padding-base) lg:w-[58%] xl:w-[55%]">
       <h3 class="font-museo-slab-rounded uppercase text-2xl sm:text-3xl md:text-4xl">{title}</h3>
       <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-(--site-padding-base)">
         {
           description.map((line) => (
-            <p class="font-museo-slab-rounded text-sm lg:text-base leading-tight">{line}</p>
+            <p class="font-museo-slab-rounded text-sm lg:text-base leading-tight" set:html={line} />
           ))
+        }
+
+        {
+          modalProps && (
+            <div class="block lg:hidden">
+              <References
+                buttonId={`${modalProps.buttonId}-mobile`}
+                modalId={`${modalProps.modalId}-mobile`}
+                modalPosition={modalProps.modalPosition || 'left'}
+                references={modalProps.references}
+                buttonText={modalProps.buttonText}
+                hasBorder={modalProps.hasBorder}
+              />
+            </div>
+          )
         }
       </div>
     </div>

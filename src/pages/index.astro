@@ -12,6 +12,7 @@ import highResImage from '../assets/images/high-res-exosome-image.png'
 import Contact from '../components/forms/Contact.astro'
 import Header from '../components/ui/Header.astro'
 import ProductCard from '../components/ui/ProductCard.astro'
+import References from '../components/ui/References.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
@@ -50,6 +51,22 @@ import Layout from '../layouts/Layout.astro'
                 skin diseases and bone disease, and serves as inspiration for Frame Bio's research.
               </p>
             </div>
+
+            <References
+              modalId="about_references"
+              buttonId="about-references-btn"
+              modalPosition="right"
+              references={[
+                {
+                  body: 'A view on the skin-bone axis: unraveling similarities and potential of crosstalk. Morimoto et al., 2024.',
+                  url: 'https://doi.org/10.3389/fmed.2024.1360483',
+                },
+                {
+                  body: 'Bone Loss Triggered by the Cytokine Network in Inflammatory Autoimmune Diseases. Amarasekara et al., 2015.',
+                  url: 'https://doi.org/10.1155/2015/832127',
+                },
+              ]}
+            />
           </div>
 
           <!-- Treatment Tags - Second Row, Spanning Both Columns -->
@@ -108,6 +125,21 @@ import Layout from '../layouts/Layout.astro'
                 cells and depositing molecular therapies directly to them.
               </p>
             </div>
+            <References
+              modalId="tech_references"
+              buttonId="tech-references-btn"
+              modalPosition="left"
+              references={[
+                {
+                  body: 'Unlocking RNA &amp; Protein Therapies. Mercury Bio, 2022.',
+                  url: 'https://www.mercurybio.com/#chimeric-yev',
+                },
+                {
+                  body: 'Bone Loss Triggered by the Cytokine Network in Inflammatory Autoimmune Diseases. Amarasekara et al., 2015.',
+                  url: 'https://doi.org/10.1038/s12276-024-01201-6',
+                },
+              ]}
+            />
           </div>
 
           <!-- Right Column: Exosome Image with Static Annotations -->
@@ -157,17 +189,55 @@ import Layout from '../layouts/Layout.astro'
               image={CollagenTexture}
               imageAlt="Illustration of collagen regeneration"
               numeral={1}
+              modalProps={{
+                modalId: 'collagen_references',
+                buttonId: 'collagen-references-btn',
+                modalPosition: 'left',
+                references: [
+                  {
+                    body: 'Collagen Supplementation for Joint Health: The Link between Composition and Scientific Knowledge. Martinez-Puig, et al., 2023.',
+                    url: 'https://doi.org/10.3390/nu15061332',
+                  },
+                ],
+                buttonText: 'References',
+                hasBorder: false,
+              }}
             />
 
             <ProductCard
               title="Bone Regeneration via BMP-2"
               description={[
                 'Bones are in a constant state of growth and deterioration. When the balance between these processes is disrupted, it affects bone density. Historically, treatment of low bone density has included dietary supplements and medications called bisphosphonates, but these can bring unwanted side effects, and long-term use has few benefits. Recent research has explored the use of a naturally produced protein called BMP, or bone morphogenetic protein. BMP-2 is currently approved by the FDA to heal fractures in certain bones and for use in spinal fusion surgery. While various forms of BMP have proven effective in bone remodeling, better delivery methods are needed to control the timing and location of release within the body.',
-                "Frame Bio's solution utilizes hydroxyapatite, a form of calcium found naturally in bones and teeth. This compound can improve the binding of BMP-2 to bone tissues, thereby delivering it directly to damaged bone. Through a research partnership with Himed—one of the world's leading producers of hydroxyapatite technologies for orthopedic devices—we’ve identified a means of deploying BMP-2 in bone scaffolding materials that are commonly used to repair hard-tissue breaks and fractures. We're future-proofing this application method by exploring how it translates into the new world of patient-specific 3D-printed implants. As healthcare becomes even more personalized and customized, our technology will be ready.",
+                `Frame Bio's solution utilizes hydroxyapatite, a form of calcium found naturally in bones and teeth. This compound can improve the binding of BMP-2 to bone tissues, thereby delivering it directly to damaged bone. Through a research partnership with <a href="https://www.himed.com/" target="_blank" rel="noopener noreferrer" class="link">Himed</a>—one of the world's leading producers of hydroxyapatite technologies for orthopedic devices—we've identified a means of deploying BMP-2 in bone scaffolding materials that are commonly used to repair hard-tissue breaks and fractures. We're future-proofing this application method by exploring how it translates into the new world of patient-specific 3D-printed implants. As healthcare becomes even more personalized and customized, our technology will be ready.`,
               ]}
               image={BoneTexture}
               imageAlt="Illustration of bone regeneration"
               numeral={2}
+              modalProps={{
+                modalId: 'bone_references',
+                buttonId: 'bone-references-btn',
+                modalPosition: 'left',
+                references: [
+                  {
+                    body: 'Bisphosphonates for Osteoporosis - Where Do We Go from Here? Whitaker et al., 2012.',
+                    url: 'https://doi.org/10.1056/NEJMp1202619',
+                  },
+                  {
+                    body: 'A Review of the Clinical Side Effects of Bone Morphogenetic Protein-2. James et al., 2016.',
+                    url: 'https://doi.org/10.1089/ten.teb.2015.0357',
+                  },
+                  {
+                    body: 'Novel Strategies for Spatiotemporal and Controlled BMP-2 Delivery in Bone Tissue Engineering. Qi et al., 2024.',
+                    url: 'https://doi.org/10.1177/09636897241276733',
+                  },
+                  {
+                    body: 'Sustained delivery of a heterodimer bone morphogenetic protein-2/7 via a collagen hydroxyapatite scaffold accelerates and improves critical femoral defect healing. Liu et al., 2023.',
+                    url: 'https://doi.org/10.1016/j.actbio.2023.03.028',
+                  },
+                ],
+                buttonText: 'References',
+                hasBorder: false,
+              }}
             />
 
             <ProductCard
@@ -179,6 +249,31 @@ import Layout from '../layouts/Layout.astro'
               image={PillsTexture}
               imageAlt="Illustration of pill regeneration"
               numeral={3}
+              modalProps={{
+                modalId: 'pill_references',
+                buttonId: 'pill-references-btn',
+                modalPosition: 'left',
+                references: [
+                  {
+                    body: 'Bioavailability of curcumin: problems and promises. Anand et al., 2007.',
+                    url: 'https://pubmed.ncbi.nlm.nih.gov/17999464/',
+                  },
+                  {
+                    body: 'The human pharmacokinetics of oral glucosamine and chondroitin sulfate after single and multiple doses. Jackson et al., 2010.',
+                    url: 'https://www.sciencedirect.com/science/article/pii/S1063458409002908',
+                  },
+                  {
+                    body: 'Specific collagen peptides improve bone mineral density and bone markers in postmenopausal women—a randomized controlled study. König D et al., 2018.',
+                    url: 'https://www.researchgate.net/publication/322545231_Specific_Collagen_Peptides_Improve_Bone_Mineral_Density_and_Bone_Markers_in_Postmenopausal_Women-A_Randomized_Controlled_Study',
+                  },
+                  {
+                    body: 'Bioavailability of bioactive food compounds: a challenging journey to bioefficacy. Rein et al., 2013.',
+                    url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3575927/',
+                  },
+                ],
+                buttonText: 'References',
+                hasBorder: false,
+              }}
             />
           </div>
         </div>

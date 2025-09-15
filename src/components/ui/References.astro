@@ -1,0 +1,91 @@
+---
+// References component with modal functionality
+
+export interface ReferenceProps {
+  title?: string
+  body: string
+  url: string
+}
+
+export interface ModalProps {
+  references: ReferenceProps[]
+  buttonText?: string
+  buttonId: string
+  modalId: string
+  modalPosition?: 'left' | 'center' | 'right'
+  hasBorder?: boolean
+}
+
+export interface Props extends ModalProps {}
+
+const {
+  references,
+  buttonText = 'References',
+  modalId,
+  modalPosition,
+  hasBorder,
+  buttonId,
+} = Astro.props
+---
+
+<div
+  class={`w-full ${hasBorder ? 'border-t-1 border-accent/50 pt-(--site-padding-base)' : ''}`}
+  id="references-container"
+>
+  <button
+    type="button"
+    aria-label="Show References"
+    id={buttonId}
+    class={`${modalPosition === 'left' ? 'mr-auto' : modalPosition === 'right' ? 'ml-auto' : 'mx-auto'} group flex items-center caption text-accent/50 hover:text-secondary transition-colors duration-200`}
+    onclick={`document.getElementById('${modalId}').showModal()`}
+  >
+    <!-- Vertical lines (static) -->
+    <div class="flex flex-row items-center gap-1.5">
+      <span
+        class="block w-0.5 bg-accent/50 group-hover:bg-secondary transition-colors duration-200 h-5"
+      ></span>
+      <span
+        class="block w-0.5 bg-accent/50 group-hover:bg-secondary transition-colors duration-200 h-5"
+      ></span>
+    </div>
+
+    <!-- Button text with padding to account for lines -->
+    <span class="pl-4 text-sm uppercase">{buttonText}</span>
+  </button>
+
+  <!-- DaisyUI Responsive Modal -->
+  <dialog id={modalId} class="modal modal-bottom sm:modal-middle transition-none">
+    <div class="modal-box">
+      <h3 class="font-bold text-lg text-secondary uppercase mb-4">References</h3>
+
+      <!-- References content -->
+      <ul class="space-y-3">
+        {
+          references.map((ref) => (
+            <li class="text-sm">
+              <span class="text-sm block text-primary">{ref.body}</span>
+              <a
+                href={ref.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link text-sm inline text-primary hover:text-secondary"
+              >
+                {ref.title || ref.url}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn btn-sm">Close</button>
+        </form>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
+</div>
