@@ -56,6 +56,7 @@ import Layout from '../layouts/Layout.astro'
               modalId="about_references"
               buttonId="about-references-btn"
               modalPosition="right"
+              hasBorder={true}
               references={[
                 {
                   body: 'A view on the skin-bone axis: unraveling similarities and potential of crosstalk. Morimoto et al., 2024.',
@@ -130,9 +131,10 @@ import Layout from '../layouts/Layout.astro'
               modalId="tech_references"
               buttonId="tech-references-btn"
               modalPosition="left"
+              hasBorder={true}
               references={[
                 {
-                  body: 'Unlocking RNA &amp; Protein Therapies. Mercury Bio, 2022.',
+                  body: 'Unlocking RNA & Protein Therapies. Mercury Bio, 2022.',
                   url: 'https://www.mercurybio.com/#chimeric-yev',
                 },
                 {
@@ -209,7 +211,7 @@ import Layout from '../layouts/Layout.astro'
               title="Bone Regeneration via BMP-2"
               description={[
                 'Bones are in a constant state of growth and deterioration. When the balance between these processes is disrupted, it affects bone density. Historically, treatment of low bone density has included dietary supplements and medications called bisphosphonates, but these can bring unwanted side effects, and long-term use has few benefits. Recent research has explored the use of a naturally produced protein called BMP, or bone morphogenetic protein. BMP-2 is currently approved by the FDA to heal fractures in certain bones and for use in spinal fusion surgery. While various forms of BMP have proven effective in bone remodeling, better delivery methods are needed to control the timing and location of release within the body.',
-                `Frame Bio's solution utilizes hydroxyapatite, a form of calcium found naturally in bones and teeth. This compound can improve the binding of BMP-2 to bone tissues, thereby delivering it directly to damaged bone. Through a research partnership with <a href="https://www.himed.com/" target="_blank" rel="noopener noreferrer" data-umami-event="Clicked Himed External Link" class="link">Himed</a>—one of the world's leading producers of hydroxyapatite technologies for orthopedic devices—we've identified a means of deploying BMP-2 in bone scaffolding materials that are commonly used to repair hard-tissue breaks and fractures. We're future-proofing this application method by exploring how it translates into the new world of patient-specific 3D-printed implants. As healthcare becomes even more personalized and customized, our technology will be ready.`,
+                `Frame Bio's solution utilizes hydroxyapatite, a form of calcium found naturally in bones and teeth. This compound can improve the binding of BMP-2 to bone tissues, thereby delivering it directly to damaged bone. Through a research partnership with <a href="https://www.himed.com/" target="_blank" rel="noopener noreferrer" data-umami-event="Clicked Himed External Link" class="link text-sm lg:text-base leading-tight">Himed</a>—one of the world's leading producers of hydroxyapatite technologies for orthopedic devices—we've identified a means of deploying BMP-2 in bone scaffolding materials that are commonly used to repair hard-tissue breaks and fractures. We're future-proofing this application method by exploring how it translates into the new world of patient-specific 3D-printed implants. As healthcare becomes even more personalized and customized, our technology will be ready.`,
               ]}
               image={BoneTexture}
               imageAlt="Illustration of bone regeneration"
