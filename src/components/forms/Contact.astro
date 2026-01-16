@@ -5,6 +5,7 @@
   method="POST"
   action="/success"
   data-netlify="true"
+  netlify-honeypot="bot-field"
   data-netlify-honeypot="bot-field"
 >
   <!-- Hidden form-name input required by Netlify -->
@@ -108,70 +109,3 @@
     >
   </div>
 </form>
-
-<script>
-  const contactForm = document.getElementById('contact-form')
-
-  async function submitContactForm(e: Event) {
-    e.preventDefault()
-
-    const form = e.target as HTMLFormElement
-    if (!form) return
-
-    const formData = new FormData(form)
-    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement
-
-    // Disable submit button and show loading state
-    if (submitButton) {
-      submitButton.disabled = true
-      submitButton.textContent = 'Submitting...'
-    }
-
-    try {
-      // First, submit to your Sanity backend
-      const sanityResponse = await fetch('/api/forms/contact', {
-        method: 'POST',
-        body: formData,
-      })
-
-      if (!sanityResponse.ok) {
-        throw new Error('Sanity submission failed')
-      }
-
-      // Convert FormData to URLSearchParams for Netlify
-      const urlEncodedData = new URLSearchParams()
-      for (const [key, value] of formData.entries()) {
-        if (typeof value === 'string') {
-          urlEncodedData.append(key, value)
-        }
-      }
-
-      // Then submit to Netlify for notifications
-      const netlifyResponse = await fetch('/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: urlEncodedData.toString(),
-      })
-
-      if (!netlifyResponse.ok) {
-        throw new Error('Netlify submission failed')
-      }
-
-      // Success - redirect to success page
-      window.location.href = '/success'
-    } catch (error) {
-      console.error('Form submission error:', error)
-      alert('There was an error submitting your form. Please try again.')
-
-      // Re-enable submit button
-      if (submitButton) {
-        submitButton.disabled = false
-        submitButton.textContent = 'Submit Info'
-      }
-    }
-  }
-
-  contactForm?.addEventListener('submit', submitContactForm)
-</script>
